@@ -1,6 +1,6 @@
 # setup.R
 
-# Packages ---------------------------------------------------------------
+# Packages -----
 
 packages <- c(
   "knitr",
@@ -22,6 +22,6 @@ if (length(to_install) > 0) {
 invisible(lapply(packages, library, character.only = TRUE))
 
 
-# Load data --------------------------------------------------------------
+# Load data ------
 
 analysis_data <- readr::read_csv("D:/Github/ice.dashboard/data/ICE_CBP Shootings+Detention Center Deaths_2026.csv")
