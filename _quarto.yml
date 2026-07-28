@@ -7,20 +7,22 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: about.qmd
         text: About
-      - database.qmd
+      - href: database.qmd
         text: Database
-      - sources.qmd
+      - href: sources.qmd
         text: Sources
+  
+  page-footer:
+    left: "Copyright 2026, Rachel Gorman"
+    center: "Built with [Quarto](https://quarto.org/) • Coded in [R](https://r-project.org) • Hosted on [Github](https://github.com)"
 
 format:
   html:
     theme:
-      - cosmo
-      - brand
+      - lumen
     css: styles.css
-    toc: true
-
-
-
+    toc: false
+    smooth-scroll: true
+    
