@@ -1,0 +1,8 @@
+---
+title: "database"
+---
+
+```{r}
+#| include: false
+source("setup.R")
+```

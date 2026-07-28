@@ -8,6 +8,11 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+        text: About
+      - database.qmd
+        text: Database
+      - sources.qmd
+        text: Sources
 
 format:
   html:

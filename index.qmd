@@ -1,5 +1,5 @@
 ---
-title: "ice.dashboard"
+title: "ICE + CBP Deaths Dashboard"
 ---
 
 This is a Quarto website.
