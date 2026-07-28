@@ -3,8 +3,6 @@
 # Packages -----
 
 packages <- c(
-  "knitr",
-  "rmarkdown",
   "tidyverse",
   "leaflet",
   "reactable",
