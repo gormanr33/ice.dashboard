@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Cards – ice.dashboard</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3d715c5553fc7860771cb02643c21830.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">ice.dashboard</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./database.html"> 
+<span class="menu-text">Database</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./sources.html"> 
+<span class="menu-text">Sources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./cards.html" aria-current="page"> 
+<span class="menu-text">Cards</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Cards</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="card mb-3">
+<div class="card-header">
+<p>Juan Jairo Coronilla Duran</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 7/14/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> St.&nbsp;Augustine, Florida</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Vehicular Homicide</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Jesus Manuel Arenas-Silva</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 7/13/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Ocilla, Georgia</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> NA</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Joan Sebastian Guerrero</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 7/13/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Biddeford, Maine</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Fatal Shooting by ICE Agent</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Lorenzo Salgado Araujo</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 7/7/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Houston, Texas</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Fatal Shooting by ICE Agent</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Adrian Andreas Florian</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 6/24/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Harlingen, Texas</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> NA</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Felix Alcorta-Rodriguez</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 6/19/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Laredo, Texas</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> NA</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Mamuka Artmeladze</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 6/4/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Winnfield, Louisiana</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> NA</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Denny Adan Gonzalez</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 5/1/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Lumpkin, Georgia</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Suicide</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Aled Damien Carbonell-Betancourt</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 4/16/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Miami, Florida</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Suicide</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Alejandro Cabrera Clemente</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 4/13/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Winnfield, Louisiana</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Under Investigation</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Tuan Van Bui</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 4/1/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Bunker Hill, Indiana</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (hypertensive arteriosclerotic cardiovascular disease)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Jose Guadalupe Ramos-Solano</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 3/25/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Victorville, California</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Under Investigation</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Royer Perez-Jimenez</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 3/16/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Moore Haven, Florida</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Suicide</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Mohammad Nazeer Paktiawal</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 3/14/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Dallas, Texas</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Under Investigation</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Emanuel Cleeford Damas</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 3/2/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Scottsdale, Arizona</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (acute respiratory failure due to septic shock, likely secondary to pneumonia)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Daphy Michel</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 3/2/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Pittsburgh, Pennsylvania</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Homicide</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Pejman Karshenas Najafabadi</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 3/1/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Natchez, Mississippi</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (severe aortic valve disease)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Alberto Gutierrez-Reyes</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 2/27/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Victorville, California</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (cardiac arrest)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Nurul Amin Shah Alam</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 2/24/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Buffalo, New York</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> NA</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Linda Davis</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 2/17/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Savannah, Georgia</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Vehicular Homicide</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Jairo Garcia-Hernandez</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 2/16/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Miami, Florida</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Under Ivestigation</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Lorth Sim</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 2/16/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Bunker Hill, Indiana</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (atherosclerotic cardiovascular disease)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Unknown</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 2/2/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> NA, NA</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> NA</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Unknown</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 2/2/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> NA, NA</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> NA</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Unknown</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 2/2/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> NA, NA</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> NA</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Unknown</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 2/2/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> NA, NA</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> NA</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Alex Pretti</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 1/24/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Minneapolis, Minnesota</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Fatal Shooting by ICE Agent</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Víctor Manuel Díaz</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 1/14/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> El Paso, Texas</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Suicide</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Heber Sánchez Domínguez</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 1/14/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Lovejoy, Georgia</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Suicide</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Parady La</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 1/9/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Philadelphia, Pennsylvania</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (organ failure cause by drug withdrawal)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Renee Nicole Good</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 1/7/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Minneapolis, Minnesota</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Fatal Shooting by ICE Agent</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Luis Beltrán Yáñez–Cruz</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 1/6/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Indio, California</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (cardiac arrest)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Luis Gustavo Núñez Cáceres</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 1/5/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> Conroe, Texas</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (cardiac arrest)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Geraldo Lunas Campos</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 1/3/2026</p>
+<p><br></p>
+<p><strong>Location:</strong> El Paso, Texas</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Homicide (asphyxiation)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Keith Porter, Jr.</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 12/31/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Los Angeles, California</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Fatal Shooting by off-duty ICE Agent</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Nenko Stanev Gantchev</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 12/15/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Baldwin, Michigan</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Fouad Saeed Abdulkadir</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 12/14/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Phillipsburg, Pennsylvania</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (“medical distress”)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Delvin Francisco Rodriguez</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 12/14/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Natchez, Mississippi</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Suicide Attempt</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Jean Wilson Brutus</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 12/12/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Newark, New Jersey</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Inconclusive / Unknown</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Isaias Sanchez Barboza</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 12/11/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Rio Grand City, Texas</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Fatal Shooting by CBP Agent</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Shiraz Fatehali Sachwani</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 12/6/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Fort Worth, Texas</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (pre-existing chronic health conditions)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Pete Sumalo Montejo</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 12/5/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Conroe, Texas</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (septic shock and pneumonia)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Francisco Gaspar-Andrés</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 12/3/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> El Paso, Texas</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (complications of alcoholic hepatic cirrhosis)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Kai Yin Wong</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 10/25/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> San Antonio, Texas</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (suspected complications due to heart surgery)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Gabriel Garcia Aviles</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 10/23/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Adelanto, California</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (cardiac arrest due to alcohol withdrawal)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Josué Castro Rivera</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 10/23/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Norfolk, Virginia</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> NA</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Hasan Ali Moh’D Saleh</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 10/11/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Miami, Florida</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (cardiac arrest)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Leo Cruz-Silva</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 10/4/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Genevieve, Missouri</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Suicide</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Huabing Xie</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 9/29/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Calexico, California</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (seizure)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Miguel Ángel García Medina</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 9/29/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Dallas, Texas</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Fatal Shooting* (active shooter, not ICE agent)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Norlan Guzman-Fuentes</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 9/24/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Dallas, Texas</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Fatal Shooting* (active shooter, not ICE agent)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Ismael Ayala-Uribe</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 9/22/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Adelanto, California</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (cardiac arrest)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Santos Banegas Reyes</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 9/18/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> East Meadow, New York</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Alcohol Withdrawal</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Silverio Villegas-Gonzalez</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 9/12/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Franklin Park, Illinois</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> NA</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Oscar Rascon Duarte</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 9/8/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Mesa, Arizona</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (respiratory failure)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Lorenzo Antonio Batrez Vargas</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 8/31/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Florence, Arizona</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (suspected pulmonary complications)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Roberto Carlos Montoya Valdez</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 8/13/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Monrovia, California</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> NA</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Chaofeng Ge</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 8/5/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Phillipsburg, Pennsylvania</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Suicide</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Tien Xuan Phan</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 7/19/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Karnes City, Texas</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (withdrawn from life support)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Jaime Alanis</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 7/10/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Camarillo, California</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> NA</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Isidro Pérez</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 6/26/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Miami, Florida</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (heart attack)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Johnny Noviello</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 6/23/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Miami, Florida</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (Acute Kidney Failure)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Jesus Molina-Veya</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 6/7/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Lumpkin, Georgia</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Suicide</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Abelardo Avellaneda Delgado</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 5/5/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Lumpkin, Georgia</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> No Official Cause of Death; No Longer Under Investigation</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Marie Ange Blaise</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 4/25/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Pompano Beach, Florida</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (atherosclerotic and hypertensive cardiovascular disease)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Nhon Ngoc Nguyen</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 4/16/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> El Paso, Texas</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (acute pneumonia, dementia)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Brayan Garzón-Rayo</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 4/8/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Rolla, Missouri</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Suicide</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Unnamed</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 3/29/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Yuma, Arizona</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Suicide by asphyxia</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Ruben Ray Martinez</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 3/15/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> South Padre Island, Texas</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Fatal shooting by ICE agent</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Juan Alexis Tineo-Martinez</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 2/23/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> San Juan, Puerto Rico</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Not Released (pending an autopsy by the Puerto Rico Forensic Science Institute.</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Maksym Chernyak</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 2/20/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Miami, Florida</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (hypertensive intracerebral hemorrhage)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Serawit Gezahegn Dejene</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 1/29/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Phoenix, Arizona</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes (complex medical conditions)</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Genry Ruiz Guillén</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 1/23/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Hialeah, Florida</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Natural Causes</p>
+</div>
+</div>
+<div class="card mb-3">
+<div class="card-header">
+<p>Felix Bauckholt</p>
+</div>
+<div class="card-body">
+<p><strong>Date:</strong> 1/20/2025</p>
+<p><br></p>
+<p><strong>Location:</strong> Coventry, Vermont</p>
+<p><br></p>
+<p><strong>Cause of Death:</strong> Fatal shooting during traffic stop by CBP agent</p>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/gormanr33\.github\.io\/ice\.dashboard\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2026, Rachel Gorman</p>
+</div>   
+    <div class="nav-footer-center">
+<p>Built with <a href="https://quarto.org/">Quarto</a> • Coded in <a href="https://r-project.org">R</a> • Hosted on <a href="https://github.com">Github</a></p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
