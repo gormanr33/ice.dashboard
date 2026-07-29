@@ -2,7 +2,7 @@
 title: "Source Documents"
 
 listing:
-  contents: "sources/*/"
+  contents: "sources/*"
   type: grid
   grid-columns: 3
   sort:
