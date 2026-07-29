@@ -1,5 +1,5 @@
 ---
-title: "database"
+title: "Database"
 ---
 
 ```{r}
@@ -7,11 +7,36 @@ title: "database"
 source("setup.R")
 ```
 
-::: {.callout-note title="About the Database"}
-[descroption here]
+::: {.callout-note appearance="simple"}
+
+## About the Database
+
+[Description Here]
+
 :::
 
-```{r}
- 
+```{r, echo=FALSE}
+ice_df_table <- ice_df
 
+# Change n/a values to "-"
+ice_df_table$Age[is.na(ice_df_table$Age)] <- "-"
+ice_df_table$State[is.na(ice_df_table$State)] <- "-"
+ice_df_table$City[is.na(ice_df_table$City)] <- "-"
+ice_df_table$County[is.na(ice_df_table$County)] <- "-"
+ice_df_table$`Cause of Death (Official)`[is.na(ice_df_table$`Cause of Death (Official)`)] <- "-"
+ice_df_table$`Cause of Death (Unofficial)`[is.na(ice_df_table$`Cause of Death (Unofficial)`)] <- "-"
+ice_df_table$`Facilities & Transfers`[is.na(ice_df_table$`Facilities & Transfers`)] <- "-"
+ice_df_table$`Other Notes`[is.na(ice_df_table$`Other Notes`)] <- "-"
+
+```
+
+
+```{r}
+#| echo: false
+
+reactable(
+  ice_df_table,
+  class = "my-table",
+  resizable = TRUE)
+    
 ```
