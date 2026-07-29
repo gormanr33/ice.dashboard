@@ -22,4 +22,4 @@ invisible(lapply(packages, library, character.only = TRUE))
 
 # Load data ------
 
-ice_data <- readr::read_csv("D:/Github/ice.dashboard/data/ICECBPdata.csv")
+ice_data <- readr::read_csv("data/ICECBPdata.csv")
