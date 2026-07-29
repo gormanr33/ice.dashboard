@@ -6,7 +6,9 @@ packages <- c(
   "tidyverse",
   "leaflet",
   "reactable",
-  "DT"
+  "DT",
+  "glue",
+  "htmltools"
 )
 
 installed <- rownames(installed.packages())

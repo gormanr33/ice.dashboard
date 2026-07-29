@@ -1,0 +1,50 @@
+---
+title: "Cards"
+---
+
+```{r}
+#| include: false
+library(tidyverse)
+library(glue)
+library(htmltools)
+
+deaths <- read_csv("data/ICECBPdata.csv")
+```
+
+```{r, echo=FALSE, results='asis'}
+
+for(i in seq_len(nrow(deaths))){
+
+cat(
+glue::glue('
+
+::: {{.card .mb-3}}
+
+::: {{.card-header}}
+
+{deaths$Name[i]}
+
+:::
+
+::: {{.card-body}}
+
+**Date:** {deaths$Date[i]}
+
+<br>
+
+**Location:** {deaths$City[i]}, {deaths$State[i]}
+
+<br>
+
+**Cause of Death:** {deaths$`Cause of Death (Official)`[i]}
+
+:::
+
+:::
+
+')
+)
+
+}
+
+```
