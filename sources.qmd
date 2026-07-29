@@ -1,8 +1,14 @@
 ---
-title: "Sources"
----
+title: "Source Documents"
 
-```{r}
-#| include: false
-source("setup.R")
-```
+listing:
+  contents: "sources/*/"
+  type: grid
+  grid-columns: 3
+  sort:
+    - date desc
+  fields:
+    - title
+    - date
+    - description
+---
