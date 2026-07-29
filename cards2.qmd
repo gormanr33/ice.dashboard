@@ -52,13 +52,23 @@ for (i in 1:nrow(ICECBPdata)) {
 </p>
 
 <p>
+
+<strong>Custody:</strong>
+<br>
+
 <span class='badge bg-secondary'>
 {ICECBPdata$Custody[i]}
 </span>
 
+<br><br>
+
+<strong>Cause of Death (Official):</strong>
+<br>
+
 <span class='badge bg-primary'>
 {ICECBPdata$`Cause of Death (Official)`[i]}
 </span>
+
 </p>
 
 

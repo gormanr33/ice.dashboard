@@ -13,10 +13,8 @@ website:
         text: Database
       - href: sources.qmd
         text: Sources
-      - href: cards.qmd
-        text: Cards
       - href: cards2.qmd
-        text: Cards2
+        text: Cards
   
   page-footer:
     left: "Copyright 2026, Rachel Gorman"
