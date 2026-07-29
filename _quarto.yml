@@ -29,4 +29,4 @@ format:
     css: styles.css
     toc: false
     smooth-scroll: true
-    
+    embed-resources: true
