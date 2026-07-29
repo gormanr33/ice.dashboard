@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://gormanr33.github.io/ice.dashboard/index.html</loc>
-    <lastmod>2026-07-28T20:38:52.120Z</lastmod>
+    <loc>https://gormanr33.github.io/ice.dashboard/sources.html</loc>
+    <lastmod>2026-07-29T00:17:23.051Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gormanr33.github.io/ice.dashboard/database.html</loc>
+    <lastmod>2026-07-29T00:17:23.051Z</lastmod>
   </url>
   <url>
     <loc>https://gormanr33.github.io/ice.dashboard/about.html</loc>
-    <lastmod>2026-07-28T20:38:52.120Z</lastmod>
+    <lastmod>2026-07-29T00:17:23.051Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gormanr33.github.io/ice.dashboard/index.html</loc>
+    <lastmod>2026-07-29T00:17:23.051Z</lastmod>
   </url>
 </urlset>
