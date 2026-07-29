@@ -2,22 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://gormanr33.github.io/ice.dashboard/sources.html</loc>
-    <lastmod>2026-07-29T03:09:59.683Z</lastmod>
+    <lastmod>2026-07-29T03:46:23.945Z</lastmod>
   </url>
   <url>
-    <loc>https://gormanr33.github.io/ice.dashboard/cards2.html</loc>
-    <lastmod>2026-07-29T03:09:59.682Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gormanr33.github.io/ice.dashboard/about.html</loc>
-    <lastmod>2026-07-29T03:09:59.682Z</lastmod>
+    <loc>https://gormanr33.github.io/ice.dashboard/test.html</loc>
+    <lastmod>2026-07-29T03:46:23.945Z</lastmod>
   </url>
   <url>
     <loc>https://gormanr33.github.io/ice.dashboard/database.html</loc>
-    <lastmod>2026-07-29T03:09:59.683Z</lastmod>
+    <lastmod>2026-07-29T03:46:23.945Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gormanr33.github.io/ice.dashboard/about.html</loc>
+    <lastmod>2026-07-29T03:46:23.944Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gormanr33.github.io/ice.dashboard/cards2.html</loc>
+    <lastmod>2026-07-29T03:46:23.944Z</lastmod>
   </url>
   <url>
     <loc>https://gormanr33.github.io/ice.dashboard/index.html</loc>
-    <lastmod>2026-07-29T03:09:59.683Z</lastmod>
+    <lastmod>2026-07-29T03:46:23.945Z</lastmod>
   </url>
 </urlset>
