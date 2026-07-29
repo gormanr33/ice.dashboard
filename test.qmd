@@ -1,0 +1,148 @@
+---
+title: "Cards2"
+format: 
+  html:
+    theme: lumen
+    css: styles.css
+    toc: false
+    smooth-scroll: true
+---
+```{r}
+#| include: false
+library(tidyverse)
+library(glue)
+library(htmltools)
+
+ICECBPdata <- read_csv("data/ICECBPdata.csv")
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+library(glue)
+
+cards <- ""
+
+for (i in 1:nrow(ICECBPdata)) {
+
+  cards <- paste0(
+    cards,
+
+    glue("
+<div class='card shadow-sm mb-4'>
+
+<div class='card-header'>
+<h4 class='mb-1'>{ICECBPdata$Name[i]}</h4>
+<small class='text-muted'>{ICECBPdata$Date[i]}</small>
+</div>
+
+<div class='card-body'>
+
+<p>
+<strong>Age:</strong> {ICECBPdata$Age[i]}<br>
+<strong>Gender:</strong> {ICECBPdata$Gender[i]}
+</p>
+
+<p>
+<strong>Location:</strong><br>
+{ICECBPdata$Country[i]}, 
+{ICECBPdata$State[i]}, 
+{ICECBPdata$City[i]}
+</p>
+
+<p>
+
+<span class='badge bg-secondary'>
+In DHS Custody?: {ICECBPdata$Custody[i]}
+</span>
+
+<span class='badge bg-primary'>
+Cause of Death: {ICECBPdata$`Cause of Death (Official)`[i]}
+</span>
+
+</p>
+
+
+<button 
+class='btn btn-outline-primary btn-sm'
+type='button'
+data-bs-toggle='collapse'
+data-bs-target='#record{i}'>
+
+View Full Record
+
+</button>
+
+
+<div class='collapse mt-4' id='record{i}'>
+
+<hr>
+
+<h5>Location of Death</h5>
+
+<p>
+{ICECBPdata$Country[i]},
+{ICECBPdata$State[i]},
+{ICECBPdata$City[i]},
+{ICECBPdata$County[i]}
+</p>
+
+
+<h5>Coordinates</h5>
+
+<p>
+Latitude: {ICECBPdata$Latitude[i]}<br>
+Longitude: {ICECBPdata$Longitude[i]}
+</p>
+
+
+<h5>Cause of Death</h5>
+
+<p>
+<strong>Official:</strong><br>
+{ICECBPdata$`Cause of Death (Official)`[i]}
+</p>
+
+<p>
+<strong>Unofficial:</strong><br>
+{ICECBPdata$`Cause of Death (Unofficial)`[i]}
+</p>
+
+
+<h5>Facilities & Transfers</h5>
+
+<p>
+{ICECBPdata$`Facilities & Transfers`[i]}
+</p>
+
+
+<h5>Other Notes</h5>
+
+<p>
+{ICECBPdata$`Other Notes`[i]}
+</p>
+
+
+<h5>Sources</h5>
+
+<p>
+<a href='{ICECBPdata$`Drive Link to Sources`[i]}' target='_blank'>
+View Source Documents
+</a>
+</p>
+
+
+</div>
+
+</div>
+
+</div>
+")
+  )
+
+}
+
+knitr::asis_output(cards)
+
+```

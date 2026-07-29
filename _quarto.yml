@@ -1,5 +1,7 @@
 project:
   type: website
+  resources: 
+    - "data/ICECBPdata.csv"
 
 website:
   title: "ice.dashboard"
@@ -15,6 +17,8 @@ website:
         text: Sources
       - href: cards2.qmd
         text: Cards
+      - href: test.qmd
+        text: test
   
   page-footer:
     left: "Copyright 2026, Rachel Gorman"

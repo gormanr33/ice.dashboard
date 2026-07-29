@@ -13,6 +13,12 @@ source("setup.R")
 
 [Description Here]
 
+To download the full dataset:
+
+<a class="btn btn-outline-primary btn-sm" href="files/ICECBPdata.csv" download>
+Download Dataset
+</a>
+
 :::
 
 ```{r, echo=FALSE}

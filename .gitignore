@@ -24,3 +24,7 @@
 
 /.quarto/
 **/*.quarto_ipynb
+.Rproj.user
+.Rproj.user
+.Rproj.user
+.Rproj.user
