@@ -2,7 +2,7 @@ project:
   type: website
   resources: 
     - "data/ICECBPdata.csv"
-
+    - "sources/"
 website:
   title: "ice.dashboard"
   navbar:
