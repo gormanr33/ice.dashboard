@@ -72,12 +72,9 @@ long_text <- function(value, preview_length = 65) {
     value
   }
 
-  paste0(
-    '<span class="tooltip-cell" title="',
-    htmltools::htmlEscape(value, attribute = TRUE),
-    '">',
-    htmltools::htmlEscape(preview),
-    '</span>'
+  tags$span(
+    title = value,
+    preview
   )
 }
 
@@ -145,7 +142,7 @@ reactable(
       minWidth = 220,
       width = 270,
       cell = function(value) {
-        htmltools::HTML(long_text(value, 65))
+        long_text(value, 65)
       }
     ),
 
@@ -153,7 +150,7 @@ reactable(
       minWidth = 220,
       width = 270,
       cell = function(value) {
-        htmltools::HTML(long_text(value, 65))
+        long_text(value, 65)
       }
     ),
 
@@ -161,18 +158,16 @@ reactable(
       minWidth = 240,
       width = 300,
       cell = function(value) {
-        htmltools::HTML(long_text(value, 65))
+        long_text(value, 65)
       }
     ),
-
+    
     `Other Notes` = colDef(
       minWidth = 240,
       width = 300,
       cell = function(value) {
-        htmltools::HTML(long_text(value, 65))
+        long_text(value, 65)
       }
     )
-  ) 
-) 
 ```
 
