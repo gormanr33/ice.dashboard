@@ -4427,7 +4427,701 @@ window.Quarto = {
 };
 </script>
 
-<style type="text/css">
+<style type="text/css">```scss
+
+
+
+$primary: #2f4b26;
+$secondary: #757083;
+$success: #b9c6ae;
+$info: #8a95a5;
+$dark: #2c1320;
+$light: #f5f6f2;
+
+:root {
+--rosy-granite: #757083;
+--cool-steel: #8a95a5;
+--ash-grey: #b9c6ae;
+--dark-spruce: #2f4b26;
+--midnight-violet: #2c1320;
+--white: #ffffff;
+--background-soft: #f5f6f2;
+--background-muted: #eef0ec;
+--text: #2c1320;
+--text-muted: #757083;
+--border: #d9ddd7;
+--link: #2f4b26;
+--link-hover: #2c1320;
+--shadow:
+0 3px 12px rgba(44, 19, 32, 0.07);
+--shadow-hover:
+0 7px 20px rgba(44, 19, 32, 0.12);
+--radius: 8px;
+--radius-small: 5px;
+--content-width: 1200px;
+}
+
+html {
+scroll-behavior: smooth;
+}
+body {
+background-color: var(--white);
+color: var(--text);
+font-size: 16px;
+line-height: 1.7;
+-webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;
+}
+
+#quarto-content {
+max-width: var(--content-width);
+margin-left: auto;
+margin-right: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+color: var(--midnight-violet);
+font-weight: 700;
+line-height: 1.25;
+}
+h1 {
+font-size: clamp(2rem, 5vw, 3rem);
+}
+h2 {
+font-size: clamp(1.6rem, 4vw, 2.25rem);
+}
+h3 {
+font-size: clamp(1.3rem, 3vw, 1.7rem);
+}
+h4 {
+font-size: 1.25rem;
+}
+h5 {
+font-size: 1.1rem;
+}
+h6 {
+font-size: 1rem;
+}
+
+p {
+margin-bottom: 1rem;
+}
+
+.lead {
+color: var(--rosy-granite);
+font-size: 1.15rem;
+line-height: 1.65;
+}
+
+a {
+color: var(--dark-spruce);
+text-decoration-thickness: 1px;
+text-underline-offset: 3px;
+transition:
+color 0.2s ease,
+opacity 0.2s ease;
+}
+a:hover {
+color: var(--midnight-violet);
+opacity: 0.85;
+}
+
+
+.navbar {
+background-color: var(--midnight-violet) !important;
+border-bottom: 4px solid var(--dark-spruce);
+padding-top: 0.65rem;
+padding-bottom: 0.65rem;
+box-shadow:
+0 2px 8px rgba(44, 19, 32, 0.08);
+}
+
+.navbar-brand {
+color: var(--white) !important;
+font-weight: 700;
+letter-spacing: 0.01em;
+}
+
+.navbar-nav .nav-link {
+color: rgba(255, 255, 255, 0.82) !important;
+font-weight: 500;
+margin-left: 0.15rem;
+margin-right: 0.15rem;
+transition:
+color 0.2s ease,
+background-color 0.2s ease;
+}
+.navbar-nav .nav-link:hover {
+color: var(--white) !important;
+background-color: rgba(185, 198, 174, 0.12);
+}
+.navbar-nav .nav-link.active {
+color: var(--ash-grey) !important;
+font-weight: 700;
+}
+
+.navbar .dropdown-menu {
+border: 1px solid var(--border);
+border-radius: var(--radius-small);
+box-shadow: var(--shadow);
+padding: 0.4rem;
+}
+.navbar .dropdown-item {
+color: var(--midnight-violet);
+border-radius: 4px;
+padding: 0.5rem 0.75rem;
+}
+.navbar .dropdown-item:hover {
+background-color: var(--background-soft);
+color: var(--dark-spruce);
+}
+
+.navbar-toggler {
+border-color: rgba(255, 255, 255, 0.4);
+}
+.navbar-toggler:focus {
+box-shadow: 0 0 0 0.15rem rgba(185, 198, 174, 0.35);
+}
+.navbar-toggler-icon {
+filter: brightness(0) invert(1);
+}
+
+.quarto-title-block {
+background-color: var(--background-soft);
+border-bottom: 1px solid var(--border);
+padding-top: 3.5rem;
+padding-bottom: 3.5rem;
+margin-bottom: 3rem;
+}
+
+.quarto-title-block .title {
+color: var(--midnight-violet);
+font-weight: 800;
+max-width: 900px;
+}
+
+.quarto-title-block .subtitle {
+color: var(--rosy-granite);
+font-size: 1.15rem;
+max-width: 750px;
+}
+
+.btn {
+border-radius: var(--radius-small);
+font-weight: 600;
+padding: 0.6rem 1.1rem;
+transition:
+background-color 0.2s ease,
+border-color 0.2s ease,
+color 0.2s ease,
+transform 0.2s ease,
+box-shadow 0.2s ease;
+}
+
+.btn-primary {
+background-color: var(--dark-spruce);
+border-color: var(--dark-spruce);
+color: var(--white);
+}
+.btn-primary:hover,
+.btn-primary:focus {
+background-color: var(--midnight-violet);
+border-color: var(--midnight-violet);
+color: var(--white);
+transform: translateY(-1px);
+box-shadow: var(--shadow);
+}
+
+.btn-secondary {
+background-color: var(--rosy-granite);
+border-color: var(--rosy-granite);
+color: var(--white);
+}
+.btn-secondary:hover,
+.btn-secondary:focus {
+background-color: var(--midnight-violet);
+border-color: var(--midnight-violet);
+color: var(--white);
+}
+
+.btn-outline-primary {
+color: var(--dark-spruce);
+border-color: var(--dark-spruce);
+}
+.btn-outline-primary:hover {
+background-color: var(--dark-spruce);
+border-color: var(--dark-spruce);
+color: var(--white);
+}
+
+.card {
+background-color: var(--white);
+border: 1px solid var(--border);
+border-radius: var(--radius);
+box-shadow: var(--shadow);
+overflow: hidden;
+transition:
+transform 0.2s ease,
+box-shadow 0.2s ease;
+}
+.card:hover {
+transform: translateY(-2px);
+box-shadow: var(--shadow-hover);
+}
+
+.card-header {
+background-color: var(--background-soft);
+border-bottom: 1px solid var(--border);
+color: var(--midnight-violet);
+font-weight: 700;
+}
+
+.card-body {
+padding: 1.4rem;
+}
+
+.card-title {
+color: var(--dark-spruce);
+font-weight: 700;
+}
+
+.card-footer {
+background-color: var(--background-soft);
+border-top: 1px solid var(--border);
+color: var(--text-muted);
+}
+
+
+.quarto-listing {
+margin-top: 2rem;
+}
+
+.quarto-grid-item {
+background-color: var(--white);
+border: 1px solid var(--border);
+border-radius: var(--radius);
+box-shadow: var(--shadow);
+overflow: hidden;
+transition:
+transform 0.2s ease,
+box-shadow 0.2s ease;
+}
+.quarto-grid-item:hover {
+transform: translateY(-3px);
+box-shadow: var(--shadow-hover);
+}
+
+.quarto-grid-item .card-title {
+color: var(--dark-spruce);
+}
+
+.quarto-grid-item .card-text {
+color: var(--rosy-granite);
+}
+
+.quarto-grid-item .listing-date,
+.quarto-grid-item .listing-author {
+color: var(--rosy-granite);
+font-size: 0.9rem;
+}
+
+
+.custom-card {
+background-color: var(--white);
+border: 1px solid var(--border);
+border-left: 5px solid var(--dark-spruce);
+border-radius: var(--radius);
+padding: 1.5rem;
+margin: 1.5rem 0;
+box-shadow: var(--shadow);
+}
+.custom-card h3,
+.custom-card h4 {
+color: var(--midnight-violet);
+margin-top: 0;
+}
+
+.highlight-card {
+background-color: var(--ash-grey);
+border-radius: var(--radius);
+padding: 1.5rem;
+margin: 1.5rem 0;
+color: var(--midnight-violet);
+}
+
+.dark-card {
+background-color: var(--midnight-violet);
+color: var(--white);
+border-radius: var(--radius);
+padding: 1.5rem;
+margin: 1.5rem 0;
+box-shadow: var(--shadow);
+}
+.dark-card h2,
+.dark-card h3,
+.dark-card h4 {
+color: var(--white);
+}
+.dark-card a {
+color: var(--ash-grey);
+}
+
+.table {
+width: 100%;
+margin-top: 1.5rem;
+margin-bottom: 1.5rem;
+border-collapse: collapse;
+font-size: 0.95rem;
+}
+
+.table thead th {
+background-color: var(--midnight-violet);
+color: var(--white);
+font-weight: 700;
+border: none;
+padding: 0.8rem;
+}
+
+.table tbody td {
+padding: 0.75rem;
+border-bottom: 1px solid var(--border);
+vertical-align: top;
+}
+
+.table tbody tr:nth-child(even) {
+background-color: var(--background-soft);
+}
+
+.table tbody tr:hover {
+background-color: var(--background-muted);
+}
+
+.table-responsive {
+overflow-x: auto;
+-webkit-overflow-scrolling: touch;
+}
+
+code {
+background-color: var(--background-muted);
+color: var(--midnight-violet);
+border-radius: 4px;
+padding: 0.15rem 0.35rem;
+font-size: 0.9em;
+}
+pre {
+background-color: #f1f2ef;
+border: 1px solid var(--border);
+border-radius: var(--radius-small);
+padding: 1rem;
+overflow-x: auto;
+}
+pre code {
+background-color: transparent;
+padding: 0;
+}
+
+blockquote {
+background-color: var(--background-soft);
+border-left: 5px solid var(--dark-spruce);
+border-radius:
+0
+var(--radius-small)
+var(--radius-small)
+0;
+color: var(--rosy-granite);
+padding: 1rem 1.5rem;
+margin: 1.5rem 0;
+}
+blockquote p:last-child {
+margin-bottom: 0;
+}
+
+img {
+max-width: 100%;
+height: auto;
+border-radius: var(--radius-small);
+}
+
+figure {
+margin: 2rem auto;
+}
+figcaption {
+color: var(--rosy-granite);
+font-size: 0.9rem;
+text-align: center;
+margin-top: 0.5rem;
+}
+
+#TOC {
+border-left: 2px solid var(--border);
+}
+#TOC a {
+color: var(--rosy-granite);
+text-decoration: none;
+}
+#TOC a:hover,
+#TOC a.active {
+color: var(--dark-spruce);
+}
+
+.sidebar {
+border-right: 1px solid var(--border);
+}
+.sidebar-title {
+color: var(--midnight-violet);
+font-weight: 700;
+}
+.sidebar-item a {
+color: var(--rosy-granite);
+}
+.sidebar-item a:hover,
+.sidebar-item a.active {
+color: var(--dark-spruce);
+}
+
+.callout {
+border-radius: var(--radius);
+box-shadow: none;
+}
+
+.callout.callout-note {
+border-left-color: var(--cool-steel);
+}
+
+.callout.callout-important {
+border-left-color: var(--midnight-violet);
+}
+
+.callout.callout-warning {
+border-left-color: var(--rosy-granite);
+}
+
+.callout.callout-tip {
+border-left-color: var(--dark-spruce);
+}
+
+hr {
+border: 0;
+border-top: 1px solid var(--border);
+margin-top: 3rem;
+margin-bottom: 3rem;
+}
+
+.nav-footer {
+background-color: var(--midnight-violet);
+color: rgba(255, 255, 255, 0.8);
+border-top: 4px solid var(--dark-spruce);
+padding-top: 2rem;
+padding-bottom: 2rem;
+}
+.nav-footer a {
+color: var(--ash-grey);
+}
+.nav-footer a:hover {
+color: var(--white);
+}
+
+#quarto-search {
+color: var(--white);
+}
+.aa-DetachedSearchButton {
+border-radius: var(--radius-small);
+}
+
+.aa-Panel {
+border-radius: var(--radius);
+box-shadow: var(--shadow-hover);
+}
+
+
+@media (max-width: 767px) {
+.table-responsive {
+width: 100%;
+overflow-x: auto;
+}
+.table {
+min-width: 600px;
+}
+}
+
+
+@media (max-width: 991px) {
+#quarto-content {
+padding-left: 1.5rem;
+padding-right: 1.5rem;
+}
+.quarto-title-block {
+padding-top: 3rem;
+padding-bottom: 3rem;
+}
+.navbar-nav .nav-link {
+padding-top: 0.65rem;
+padding-bottom: 0.65rem;
+}
+}
+
+@media (max-width: 767px) {
+body {
+font-size: 15px;
+line-height: 1.6;
+}
+
+#quarto-content {
+width: 100%;
+padding-left: 1rem;
+padding-right: 1rem;
+}
+
+h1 {
+font-size: 2rem;
+}
+h2 {
+font-size: 1.6rem;
+}
+h3 {
+font-size: 1.3rem;
+}
+
+.quarto-title-block {
+padding: 2.25rem 1rem;
+margin-bottom: 2rem;
+}
+.quarto-title-block .subtitle {
+font-size: 1rem;
+}
+
+.card {
+margin-bottom: 1rem;
+}
+.card-body {
+padding: 1rem;
+}
+.custom-card,
+.highlight-card,
+.dark-card {
+padding: 1rem;
+}
+
+.btn {
+margin-bottom: 0.5rem;
+}
+
+figure {
+margin: 1.5rem 0;
+}
+
+.nav-footer {
+text-align: center;
+padding-left: 1rem;
+padding-right: 1rem;
+}
+
+p,
+li,
+td,
+th {
+overflow-wrap: break-word;
+word-wrap: break-word;
+}
+
+pre {
+max-width: 100%;
+font-size: 0.8rem;
+}
+}
+
+@media (max-width: 480px) {
+body {
+font-size: 14px;
+}
+#quarto-content {
+padding-left: 0.8rem;
+padding-right: 0.8rem;
+}
+.quarto-title-block {
+padding: 2rem 0.8rem;
+}
+h1 {
+font-size: 1.75rem;
+}
+h2 {
+font-size: 1.45rem;
+}
+h3 {
+font-size: 1.2rem;
+}
+.card-body {
+padding: 0.85rem;
+}
+}
+
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.nav-link:focus-visible {
+outline: 3px solid var(--cool-steel);
+outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+html {
+scroll-behavior: auto;
+}
+*,
+*::before,
+*::after {
+transition: none !important;
+animation: none !important;
+}
+}
+
+
+.text-muted {
+color: var(--rosy-granite) !important;
+}
+.text-spruce {
+color: var(--dark-spruce) !important;
+}
+.text-violet {
+color: var(--midnight-violet) !important;
+}
+.text-steel {
+color: var(--cool-steel) !important;
+}
+
+.bg-soft {
+background-color: var(--background-soft) !important;
+}
+.bg-ash {
+background-color: var(--ash-grey) !important;
+}
+.bg-violet {
+background-color: var(--midnight-violet) !important;
+}
+.bg-spruce {
+background-color: var(--dark-spruce) !important;
+}
+
+.border-soft {
+border-color: var(--border) !important;
+}
+
+.text-center {
+text-align: center;
+}
+
+.section-space {
+margin-top: 4rem;
+margin-bottom: 4rem;
+}
+
+```
 </style>
 </head>
 
@@ -4512,7 +5206,7 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1783987200000" data-listing-file-modified-sort="1785542040980" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="28">
+<div class="g-col-1" data-index="0" data-listing-date-sort="1783987200000" data-listing-file-modified-sort="1785542764239" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="28">
 <a href="./sources/2026.07.14 - Juan Jairo Coronilla Duran/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
