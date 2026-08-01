@@ -17,7 +17,7 @@ website:
         text: Individual Data Cards
       - href: inclusioncriteria.qmd
         text: Inclusion Criteria
-      - href: variables.qmd
+      - href: Variables.qmd
         text: Variables
       - href: faq.qmd
         text: FAQ
