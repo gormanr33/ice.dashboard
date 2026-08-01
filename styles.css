@@ -1,14 +1,13 @@
-```css
 /* ============================================================
-   QUARTO + LUMEN CUSTOM STYLES
-   Base theme: Lumen
-   File type: CSS
+   QUARTO WEBSITE
+   Base Theme: Lumen
+   Custom Stylesheet
    ============================================================ */
 
 
-/* ------------------------------------------------------------
+/* ============================================================
    COLOR PALETTE
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 :root {
   --rosy-granite: #757083;
@@ -17,42 +16,50 @@
   --dark-spruce: #2f4b26;
   --midnight-violet: #2c1320;
 
-  --light-background: #f7f8f5;
-  --border-color: #d8ddd5;
+  --cream: #f7f8f5;
+  --white: #ffffff;
+  --border: #d9ddd7;
+
+  --shadow:
+    0 2px 10px rgba(44, 19, 32, 0.08);
+
+  --shadow-hover:
+    0 6px 18px rgba(44, 19, 32, 0.14);
 }
 
 
-/* ------------------------------------------------------------
+/* ============================================================
    GENERAL
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
+  background-color: var(--white);
   color: var(--midnight-violet);
-  background-color: #ffffff;
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 
-/* ------------------------------------------------------------
-   NAVBAR
-   ------------------------------------------------------------ */
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
 
 .navbar {
   background-color: var(--midnight-violet) !important;
+
   border-bottom: 4px solid var(--dark-spruce);
 }
 
 .navbar-brand {
-  color: #ffffff !important;
+  color: var(--white) !important;
   font-weight: 700;
 }
 
 .navbar-nav .nav-link {
-  color: #ffffff !important;
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .navbar-nav .nav-link:hover {
@@ -61,10 +68,11 @@ body {
 
 .navbar-nav .nav-link.active {
   color: var(--ash-grey) !important;
+  font-weight: 600;
 }
 
 
-/* Mobile navbar */
+/* Mobile navigation button */
 
 .navbar-toggler {
   border-color: rgba(255, 255, 255, 0.5);
@@ -75,33 +83,22 @@ body {
 }
 
 
-/* Dropdown */
+/* Dropdown menu */
 
 .navbar .dropdown-menu {
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
 }
 
 .navbar .dropdown-item:hover {
-  background-color: var(--light-background);
+  background-color: var(--cream);
   color: var(--dark-spruce);
 }
 
 
-/* ------------------------------------------------------------
-   MAIN CONTENT
-   ------------------------------------------------------------ */
-
-#quarto-content {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-/* ------------------------------------------------------------
-   HEADINGS
-   ------------------------------------------------------------ */
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
 
 h1,
 h2,
@@ -126,14 +123,19 @@ h3 {
 }
 
 
-/* ------------------------------------------------------------
+/* Secondary text */
+
+.text-muted {
+  color: var(--rosy-granite) !important;
+}
+
+
+/* ============================================================
    LINKS
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 a {
   color: var(--dark-spruce);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
 }
 
 a:hover {
@@ -141,13 +143,14 @@ a:hover {
 }
 
 
-/* ------------------------------------------------------------
+/* ============================================================
    TITLE BLOCK
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 .quarto-title-block {
-  background-color: var(--light-background);
-  border-bottom: 1px solid var(--border-color);
+  background-color: var(--cream);
+
+  border-bottom: 1px solid var(--border);
 }
 
 .quarto-title-block .title {
@@ -159,14 +162,15 @@ a:hover {
 }
 
 
-/* ------------------------------------------------------------
+/* ============================================================
    BUTTONS
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 .btn-primary {
   background-color: var(--dark-spruce) !important;
   border-color: var(--dark-spruce) !important;
-  color: #ffffff !important;
+
+  color: var(--white) !important;
 }
 
 .btn-primary:hover {
@@ -181,22 +185,22 @@ a:hover {
 
 .btn-outline-primary:hover {
   background-color: var(--dark-spruce) !important;
-  color: #ffffff !important;
+  color: var(--white) !important;
 }
 
 
-/* ------------------------------------------------------------
+/* ============================================================
    CARDS
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 .card {
-  background-color: #ffffff;
+  background-color: var(--white);
 
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border);
+
   border-radius: 8px;
 
-  box-shadow:
-    0 3px 12px rgba(44, 19, 32, 0.08);
+  box-shadow: var(--shadow);
 
   overflow: hidden;
 
@@ -207,39 +211,50 @@ a:hover {
 
 .card:hover {
   transform: translateY(-2px);
-
-  box-shadow:
-    0 7px 20px rgba(44, 19, 32, 0.13);
+  box-shadow: var(--shadow-hover);
 }
 
 .card-header {
-  background-color: var(--light-background);
+  background-color: var(--cream);
+
   color: var(--midnight-violet);
 
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border);
+
+  font-weight: 600;
 }
 
 .card-title {
   color: var(--dark-spruce);
 }
 
+.card-body {
+  padding: 1.25rem;
+}
 
-/* ------------------------------------------------------------
-   QUARTO LISTING CARDS
-   ------------------------------------------------------------ */
+.card-footer {
+  background-color: var(--cream);
+
+  border-top: 1px solid var(--border);
+}
+
+
+/* ============================================================
+   QUARTO LISTINGS
+   ============================================================ */
 
 .quarto-listing {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .quarto-grid-item {
-  background-color: #ffffff;
+  background-color: var(--white);
 
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border);
+
   border-radius: 8px;
 
-  box-shadow:
-    0 3px 12px rgba(44, 19, 32, 0.08);
+  box-shadow: var(--shadow);
 
   overflow: hidden;
 
@@ -249,10 +264,9 @@ a:hover {
 }
 
 .quarto-grid-item:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 
-  box-shadow:
-    0 7px 20px rgba(44, 19, 32, 0.13);
+  box-shadow: var(--shadow-hover);
 }
 
 .quarto-grid-item .card-title {
@@ -264,23 +278,24 @@ a:hover {
 }
 
 
-/* ------------------------------------------------------------
+/* ============================================================
    TABLES
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 .table {
-  width: 100%;
+  color: var(--midnight-violet);
 }
 
 .table thead th {
-  background-color: var(--midnight-violet);
-  color: #ffffff;
+  background-color: var(--midnight-violet) !important;
+
+  color: var(--white) !important;
 
   border-color: var(--midnight-violet);
 }
 
 .table tbody tr:nth-child(even) {
-  background-color: var(--light-background);
+  background-color: var(--cream);
 }
 
 .table tbody tr:hover {
@@ -288,7 +303,7 @@ a:hover {
 }
 
 
-/* Horizontal scrolling on small screens */
+/* Make wide tables scroll */
 
 .table-responsive {
   overflow-x: auto;
@@ -296,47 +311,24 @@ a:hover {
 }
 
 
-/* ------------------------------------------------------------
-   CODE
-   ------------------------------------------------------------ */
-
-code {
-  color: var(--midnight-violet);
-  background-color: #eef1eb;
-  border-radius: 4px;
-  padding: 0.15rem 0.35rem;
-}
-
-pre {
-  background-color: #f1f2ef;
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  overflow-x: auto;
-}
-
-pre code {
-  background-color: transparent;
-}
-
-
-/* ------------------------------------------------------------
+/* ============================================================
    BLOCKQUOTES
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 blockquote {
-  border-left: 5px solid var(--dark-spruce);
+  background-color: var(--cream);
 
-  background-color: var(--light-background);
+  border-left: 5px solid var(--dark-spruce);
 
   color: var(--rosy-granite);
 
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.25rem;
 }
 
 
-/* ------------------------------------------------------------
+/* ============================================================
    CALLOUTS
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 .callout {
   border-radius: 8px;
@@ -359,16 +351,13 @@ blockquote {
 }
 
 
-/* ------------------------------------------------------------
+/* ============================================================
    TABLE OF CONTENTS
-   ------------------------------------------------------------ */
-
-#TOC {
-  border-left: 2px solid var(--border-color);
-}
+   ============================================================ */
 
 #TOC a {
   color: var(--rosy-granite);
+
   text-decoration: none;
 }
 
@@ -378,12 +367,12 @@ blockquote {
 }
 
 
-/* ------------------------------------------------------------
+/* ============================================================
    SIDEBAR
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 .sidebar {
-  border-right: 1px solid var(--border-color);
+  border-right: 1px solid var(--border);
 }
 
 .sidebar-title {
@@ -400,102 +389,9 @@ blockquote {
 }
 
 
-/* ------------------------------------------------------------
-   CUSTOM CARDS
-   ------------------------------------------------------------ */
-
-.custom-card {
-  background-color: #ffffff;
-
-  border: 1px solid var(--border-color);
-  border-left: 5px solid var(--dark-spruce);
-
-  border-radius: 8px;
-
-  padding: 1.5rem;
-  margin: 1.5rem 0;
-
-  box-shadow:
-    0 3px 12px rgba(44, 19, 32, 0.08);
-}
-
-.custom-card h3,
-.custom-card h4 {
-  color: var(--midnight-violet);
-  margin-top: 0;
-}
-
-
-/* Highlight card */
-
-.highlight-card {
-  background-color: var(--ash-grey);
-  color: var(--midnight-violet);
-
-  border-radius: 8px;
-
-  padding: 1.5rem;
-  margin: 1.5rem 0;
-}
-
-
-/* Dark card */
-
-.dark-card {
-  background-color: var(--midnight-violet);
-  color: #ffffff;
-
-  border-radius: 8px;
-
-  padding: 1.5rem;
-  margin: 1.5rem 0;
-}
-
-.dark-card h2,
-.dark-card h3,
-.dark-card h4 {
-  color: #ffffff;
-}
-
-.dark-card a {
-  color: var(--ash-grey);
-}
-
-
-/* ------------------------------------------------------------
-   FOOTER
-   ------------------------------------------------------------ */
-
-.nav-footer {
-  background-color: var(--midnight-violet);
-
-  color: #ffffff;
-
-  border-top: 4px solid var(--dark-spruce);
-}
-
-.nav-footer a {
-  color: var(--ash-grey);
-}
-
-.nav-footer a:hover {
-  color: #ffffff;
-}
-
-
-/* ------------------------------------------------------------
-   HORIZONTAL RULES
-   ------------------------------------------------------------ */
-
-hr {
-  border: 0;
-  border-top: 1px solid var(--border-color);
-}
-
-
-/* ------------------------------------------------------------
+/* ============================================================
    IMAGES
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 img {
   max-width: 100%;
@@ -508,143 +404,274 @@ figure figcaption {
 
 
 /* ============================================================
-   MOBILE RESPONSIVE DESIGN
+   CODE
    ============================================================ */
 
+code {
+  color: var(--midnight-violet);
 
-/* Tablets */
+  background-color: #eef1eb;
 
-@media (max-width: 991px) {
+  border-radius: 4px;
 
-  #quarto-content {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
+  padding: 0.15rem 0.3rem;
 }
 
+pre {
+  background-color: #f1f2ef;
 
-/* Phones */
+  border: 1px solid var(--border);
 
-@media (max-width: 767px) {
+  border-radius: 6px;
 
-  body {
-    font-size: 15px;
-    line-height: 1.6;
-  }
-
-  #quarto-content {
-    width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-
-  /* Headings */
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.6rem;
-  }
-
-  h3 {
-    font-size: 1.3rem;
-  }
-
-
-  /* Title */
-
-  .quarto-title-block {
-    padding: 2rem 1rem;
-  }
-
-
-  /* Cards */
-
-  .card-body {
-    padding: 1rem;
-  }
-
-  .custom-card,
-  .highlight-card,
-  .dark-card {
-    padding: 1rem;
-  }
-
-
-  /* Footer */
-
-  .nav-footer {
-    text-align: center;
-  }
-
-
-  /* Long text */
-
-  p,
-  li,
-  td,
-  th {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-  }
-
+  overflow-x: auto;
 }
 
-
-/* Very small phones */
-
-@media (max-width: 480px) {
-
-  #quarto-content {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
-
-  h1 {
-    font-size: 1.75rem;
-  }
-
-  h2 {
-    font-size: 1.45rem;
-  }
-
-  h3 {
-    font-size: 1.2rem;
-  }
-
+pre code {
+  background-color: transparent;
 }
 
 
 /* ============================================================
-   ACCESSIBILITY
+   HORIZONTAL RULES
    ============================================================ */
+
+hr {
+  border: 0;
+
+  border-top: 1px solid var(--border);
+
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+
+/* ============================================================
+   CUSTOM SOURCE / RECORD CARDS
+   ============================================================ */
+
+/*
+   Use this class when you want a card with:
+
+   ::: {.custom-card}
+   Content
+
+*/
+
+.custom-card {
+background-color: var(--white);
+
+border: 1px solid var(--border);
+
+border-left: 5px solid var(--dark-spruce);
+
+border-radius: 8px;
+
+padding: 1.5rem;
+
+margin: 1.5rem 0;
+
+box-shadow: var(--shadow);
+}
+
+.custom-card h3,
+.custom-card h4 {
+color: var(--midnight-violet);
+
+margin-top: 0;
+}
+
+/* Highlight card */
+
+.highlight-card {
+background-color: var(--ash-grey);
+
+color: var(--midnight-violet);
+
+border-radius: 8px;
+
+padding: 1.5rem;
+
+margin: 1.5rem 0;
+}
+
+/* Dark card */
+
+.dark-card {
+background-color: var(--midnight-violet);
+
+color: var(--white);
+
+border-radius: 8px;
+
+padding: 1.5rem;
+
+margin: 1.5rem 0;
+
+box-shadow: var(--shadow);
+}
+
+.dark-card h2,
+.dark-card h3,
+.dark-card h4 {
+color: var(--white);
+}
+
+.dark-card a {
+color: var(--ash-grey);
+}
+
+/* ============================================================
+FOOTER
+============================================================ */
+
+.nav-footer {
+background-color: var(--midnight-violet);
+
+color: var(--white);
+
+border-top: 4px solid var(--dark-spruce);
+}
+
+.nav-footer a {
+color: var(--ash-grey);
+}
+
+.nav-footer a:hover {
+color: var(--white);
+}
+
+/* ============================================================
+MOBILE
+============================================================ */
+
+@media (max-width: 991px) {
+
+#quarto-content {
+padding-left: 1.5rem;
+padding-right: 1.5rem;
+}
+
+}
+
+@media (max-width: 767px) {
+
+body {
+font-size: 15px;
+line-height: 1.6;
+}
+
+#quarto-content {
+width: 100%;
+
+padding-left: 1rem;
+padding-right: 1rem;
+
+}
+
+/* Headings */
+
+h1 {
+font-size: 2rem;
+}
+
+h2 {
+font-size: 1.6rem;
+}
+
+h3 {
+font-size: 1.3rem;
+}
+
+/* Title */
+
+.quarto-title-block {
+padding: 2rem 1rem;
+}
+
+/* Cards */
+
+.card-body {
+padding: 1rem;
+}
+
+.custom-card,
+.highlight-card,
+.dark-card {
+padding: 1rem;
+}
+
+/* Tables */
+
+.table-responsive {
+width: 100%;
+overflow-x: auto;
+}
+
+/* Footer */
+
+.nav-footer {
+text-align: center;
+}
+
+/* Prevent long content from breaking mobile */
+
+p,
+li,
+td,
+th {
+overflow-wrap: break-word;
+word-wrap: break-word;
+}
+
+}
+
+@media (max-width: 480px) {
+
+#quarto-content {
+padding-left: 0.75rem;
+padding-right: 0.75rem;
+}
+
+h1 {
+font-size: 1.75rem;
+}
+
+h2 {
+font-size: 1.45rem;
+}
+
+h3 {
+font-size: 1.2rem;
+}
+
+}
+
+/* ============================================================
+ACCESSIBILITY
+============================================================ */
 
 a:focus-visible,
 button:focus-visible,
 .btn:focus-visible {
-  outline: 3px solid var(--cool-steel);
-  outline-offset: 3px;
-}
+outline: 3px solid var(--cool-steel);
 
+outline-offset: 3px;
+}
 
 /* Reduced motion */
 
 @media (prefers-reduced-motion: reduce) {
 
-  html {
-    scroll-behavior: auto;
-  }
+html {
+scroll-behavior: auto;
+}
 
-  *,
-  *::before,
-  *::after {
-    transition: none !important;
-    animation: none !important;
-  }
+*,
+*::before,
+*::after {
+transition: none !important;
+animation: none !important;
+}
 
 }
-```
