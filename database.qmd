@@ -40,15 +40,60 @@ ice_df_table <- ice_df_table %>% select(-`Drive Link to Sources`)
 ```
 
 
+````r
 ```{r}
 #| echo: false
 
+library(reactable)
+library(htmltools)
+
+
+# ------------------------------------------------------------
+# Helper function for long-text cells
+# ------------------------------------------------------------
+
+long_text <- function(value, preview_length = 60) {
+
+  # Handle missing values
+  if (is.null(value) || is.na(value) || value == "") {
+    return("")
+  }
+
+  value <- as.character(value)
+
+  # Create shortened preview
+  preview <- if (nchar(value) > preview_length) {
+    paste0(
+      substr(value, 1, preview_length),
+      "..."
+    )
+  } else {
+    value
+  }
+
+  # Create tooltip
+  div(
+    class = "tooltip-cell",
+
+    span(
+      class = "tooltip-preview",
+      preview
+    ),
+
+    span(
+      class = "custom-tooltip",
+      value
+    )
+  )
+}
+
+
+# ------------------------------------------------------------
+# Reactable
+# ------------------------------------------------------------
+
 reactable(
   ice_df_table,
-
-  # ----------------------------------------------------------
-  # GENERAL TABLE SETTINGS
-  # ----------------------------------------------------------
 
   class = "my-table",
 
@@ -70,7 +115,7 @@ reactable(
 
 
   # ----------------------------------------------------------
-  # DEFAULT COLUMN SETTINGS
+  # Default columns
   # ----------------------------------------------------------
 
   defaultColDef = colDef(
@@ -78,146 +123,137 @@ reactable(
 
     headerStyle = list(
       fontWeight = "700"
-    ),
-
-    style = list(
-      whiteSpace = "nowrap",
-      overflow = "hidden",
-      textOverflow = "ellipsis"
     )
   ),
 
 
   # ----------------------------------------------------------
-  # LONG-TEXT COLUMNS
+  # Column-specific settings
   # ----------------------------------------------------------
 
   columns = list(
 
     `Name` = colDef(
-      minWidth = 220,
-      width = 250,
-
-      cell = function(value) {
-
-        div(
-          title = value,
-
-          style = list(
-            whiteSpace = "nowrap",
-            overflow = "hidden",
-            textOverflow = "ellipsis"
-          ),
-
-          value
-        )
-      }
+      minWidth = 200,
+      width = 240
     ),
 
+    `Date` = colDef(
+      minWidth = 110,
+      width = 120
+    ),
+
+    `Age` = colDef(
+      minWidth = 70,
+      width = 80,
+      align = "center"
+    ),
+
+    `Gender` = colDef(
+      minWidth = 100,
+      width = 110
+    ),
 
     `Location` = colDef(
       minWidth = 180,
-      width = 220,
+      width = 220
+    ),
 
-      cell = function(value) {
+    `Country` = colDef(
+      minWidth = 120,
+      width = 140
+    ),
 
-        div(
-          title = value,
+    `State` = colDef(
+      minWidth = 100,
+      width = 120
+    ),
 
-          style = list(
-            whiteSpace = "nowrap",
-            overflow = "hidden",
-            textOverflow = "ellipsis"
-          ),
+    `City` = colDef(
+      minWidth = 140,
+      width = 160
+    ),
 
-          value
-        )
-      }
+    `County` = colDef(
+      minWidth = 140,
+      width = 170
+    ),
+
+    `Latitude` = colDef(
+      minWidth = 110,
+      width = 120
+    ),
+
+    `Longitude` = colDef(
+      minWidth = 110,
+      width = 120
+    ),
+
+    `Custody` = colDef(
+      minWidth = 130,
+      width = 150
     ),
 
 
+    # --------------------------------------------------------
+    # Long text columns
+    # --------------------------------------------------------
+
     `Cause of Death (Official)` = colDef(
+
       minWidth = 250,
       width = 300,
 
       cell = function(value) {
-
-        div(
-          title = value,
-
-          style = list(
-            whiteSpace = "nowrap",
-            overflow = "hidden",
-            textOverflow = "ellipsis"
-          ),
-
-          value
+        long_text(
+          value,
+          preview_length = 70
         )
       }
     ),
 
 
     `Cause of Death (Unofficial)` = colDef(
+
       minWidth = 250,
       width = 300,
 
       cell = function(value) {
-
-        div(
-          title = value,
-
-          style = list(
-            whiteSpace = "nowrap",
-            overflow = "hidden",
-            textOverflow = "ellipsis"
-          ),
-
-          value
+        long_text(
+          value,
+          preview_length = 70
         )
       }
     ),
 
 
     `Facilities & Transfers` = colDef(
-      minWidth = 300,
+
+      minWidth = 280,
       width = 350,
 
       cell = function(value) {
-
-        div(
-          title = value,
-
-          style = list(
-            whiteSpace = "nowrap",
-            overflow = "hidden",
-            textOverflow = "ellipsis"
-          ),
-
-          value
+        long_text(
+          value,
+          preview_length = 70
         )
       }
     ),
 
 
     `Other Notes` = colDef(
-      minWidth = 300,
+
+      minWidth = 280,
       width = 350,
 
       cell = function(value) {
-
-        div(
-          title = value,
-
-          style = list(
-            whiteSpace = "nowrap",
-            overflow = "hidden",
-            textOverflow = "ellipsis"
-          ),
-
-          value
+        long_text(
+          value,
+          preview_length = 70
         )
       }
     )
   )
 )
 ```
+
