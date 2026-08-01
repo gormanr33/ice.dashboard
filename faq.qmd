@@ -4,7 +4,7 @@ title: "FAQ"
 
 ::: {.text-chunk}
 
-###Can I use this data?
+## Can I use this data?
 
   Yes! Please! Just credit me, and if you have the time/inclination please email me and show me what you’re using it for, I’d love to see it. 
 
@@ -14,7 +14,7 @@ title: "FAQ"
 
 ::: {.text-chunk}
 
-###Can you do some data analysis for me with this data?
+## Can you do some data analysis for me with this data?
 
   Absolutely! Please get in touch with as many details as possible and I’ll do my best to make it happen. No one will ever be turned away for lack of funds, but if you have the resources to pay me I would greatly appreciate it. 
 
@@ -22,21 +22,21 @@ title: "FAQ"
 
 ::: {.text-chunk}
 
-###When will you update this?
+## When will you update this?
 
 	Because this is a solo (unpaid) project, I do not have a steady update rate though I try to update at least once a week and work on backfilling information and working on adding variables at about the same pace.
 :::
 
 ::: {.text-chunk}
 
-###What is the tangential articles tab?
+## What is the tangential articles tab?
 
 	This is a collection of articles that I believe are related in some way to the pattern of ICE/CBP deaths. They work as a way to flesh out a larger picture of how state facilitated violence is normalized through social processing and discussed through social media channels. These articles track other actions and related activity by DHS/ICE/CBP on tracking, surveilling, and otherwise interacting with both individuals and larger social structures. 
 :::
 
 :::{.text-chunk}
 
-###Why didn’t you include xyz?
+## Why didn’t you include xyz?
 
   If you know of any individuals or information that I’ve missed, please reach out! If something on the website isn’t working, please reach out! If you want me to add a variable or use case, please reach out! If you want to collaborate, please reach out!!! I am available by email and will respond, though it may take some time.
 
@@ -44,13 +44,13 @@ title: "FAQ"
 
 ::: {.text-chunk}
 
-###Why are you doing this?
+## Why are you doing this?
 
 :::
 
 ::: {.text-chunk}
 
-###I don’t like this/agree with this/think you should take this down/ etc.
+## I don’t like this/agree with this/think you should take this down/ etc.
 	
 	Oh well <3 
 	

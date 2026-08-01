@@ -25,7 +25,7 @@ You can hover your mouse over the “Cause of Death (Official)”, "Cause of Dea
 
 :::
 
-:::
+::: {text.chunk}
 
 ## About the Database
 
