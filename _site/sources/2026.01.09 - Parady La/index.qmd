@@ -1,5 +1,10 @@
 ---
-title: "index"
-format: html
+title: "Parady La"
+date: "2026-01-09"
 ---
 
+## Source Documents
+
+- [ICE.gov Detainee Death Report](ICE.gov - Detainee Death Report.pdf)
+- [ICE.gov News Article](ICE.gov - News Article - 01.10.2026.pdf)
+- [ACLU Pennsylvania Press Release](ACLU Pennsylvania - Press Release - 02.05.2026.pdf)

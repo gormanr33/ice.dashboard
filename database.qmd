@@ -145,7 +145,7 @@ reactable(
       minWidth = 220,
       width = 270,
       cell = function(value) {
-        html(long_text(value, 65))
+        htmltools::HTML(long_text(value, 65))
       }
     ),
 
@@ -153,7 +153,7 @@ reactable(
       minWidth = 220,
       width = 270,
       cell = function(value) {
-        html(long_text(value, 65))
+        htmltools::HTML(long_text(value, 65))
       }
     ),
 
@@ -161,7 +161,7 @@ reactable(
       minWidth = 240,
       width = 300,
       cell = function(value) {
-        html(long_text(value, 65))
+        htmltools::HTML(long_text(value, 65))
       }
     ),
 
@@ -169,7 +169,7 @@ reactable(
       minWidth = 240,
       width = 300,
       cell = function(value) {
-        html(long_text(value, 65))
+        htmltools::HTML(long_text(value, 65))
       }
     )
   ) 
