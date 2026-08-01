@@ -169,5 +169,7 @@ reactable(
         long_text(value, 65)
       }
     )
+  )
+)
 ```
 
