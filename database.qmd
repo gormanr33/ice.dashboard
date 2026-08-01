@@ -34,6 +34,9 @@ ice_df_table$`Cause of Death (Unofficial)`[is.na(ice_df_table$`Cause of Death (U
 ice_df_table$`Facilities & Transfers`[is.na(ice_df_table$`Facilities & Transfers`)] <- "-"
 ice_df_table$`Other Notes`[is.na(ice_df_table$`Other Notes`)] <- "-"
 
+# Drop Drive Link to Sources Column
+ice_df_table <- ice_df_table %>% select(-`Drive Link to Sources`)
+
 ```
 
 
@@ -42,7 +45,179 @@ ice_df_table$`Other Notes`[is.na(ice_df_table$`Other Notes`)] <- "-"
 
 reactable(
   ice_df_table,
+
+  # ----------------------------------------------------------
+  # GENERAL TABLE SETTINGS
+  # ----------------------------------------------------------
+
   class = "my-table",
-  resizable = TRUE)
-    
+
+  fullWidth = TRUE,
+
+  bordered = FALSE,
+
+  striped = TRUE,
+
+  highlight = TRUE,
+
+  compact = FALSE,
+
+  resizable = TRUE,
+
+  defaultPageSize = 15,
+
+  paginationType = "jump",
+
+
+  # ----------------------------------------------------------
+  # DEFAULT COLUMN SETTINGS
+  # ----------------------------------------------------------
+
+  defaultColDef = colDef(
+    align = "left",
+
+    headerStyle = list(
+      fontWeight = "700"
+    ),
+
+    style = list(
+      whiteSpace = "nowrap",
+      overflow = "hidden",
+      textOverflow = "ellipsis"
+    )
+  ),
+
+
+  # ----------------------------------------------------------
+  # LONG-TEXT COLUMNS
+  # ----------------------------------------------------------
+
+  columns = list(
+
+    `Name` = colDef(
+      minWidth = 220,
+      width = 250,
+
+      cell = function(value) {
+
+        div(
+          title = value,
+
+          style = list(
+            whiteSpace = "nowrap",
+            overflow = "hidden",
+            textOverflow = "ellipsis"
+          ),
+
+          value
+        )
+      }
+    ),
+
+
+    `Location` = colDef(
+      minWidth = 180,
+      width = 220,
+
+      cell = function(value) {
+
+        div(
+          title = value,
+
+          style = list(
+            whiteSpace = "nowrap",
+            overflow = "hidden",
+            textOverflow = "ellipsis"
+          ),
+
+          value
+        )
+      }
+    ),
+
+
+    `Cause of Death (Official)` = colDef(
+      minWidth = 250,
+      width = 300,
+
+      cell = function(value) {
+
+        div(
+          title = value,
+
+          style = list(
+            whiteSpace = "nowrap",
+            overflow = "hidden",
+            textOverflow = "ellipsis"
+          ),
+
+          value
+        )
+      }
+    ),
+
+
+    `Cause of Death (Unofficial)` = colDef(
+      minWidth = 250,
+      width = 300,
+
+      cell = function(value) {
+
+        div(
+          title = value,
+
+          style = list(
+            whiteSpace = "nowrap",
+            overflow = "hidden",
+            textOverflow = "ellipsis"
+          ),
+
+          value
+        )
+      }
+    ),
+
+
+    `Facilities & Transfers` = colDef(
+      minWidth = 300,
+      width = 350,
+
+      cell = function(value) {
+
+        div(
+          title = value,
+
+          style = list(
+            whiteSpace = "nowrap",
+            overflow = "hidden",
+            textOverflow = "ellipsis"
+          ),
+
+          value
+        )
+      }
+    ),
+
+
+    `Other Notes` = colDef(
+      minWidth = 300,
+      width = 350,
+
+      cell = function(value) {
+
+        div(
+          title = value,
+
+          style = list(
+            whiteSpace = "nowrap",
+            overflow = "hidden",
+            textOverflow = "ellipsis"
+          ),
+
+          value
+        )
+      }
+    )
+  )
+)
 ```

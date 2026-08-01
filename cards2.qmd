@@ -53,20 +53,12 @@ for (i in 1:nrow(ICECBPdata)) {
 
 <p>
 
-<strong>Custody:</strong>
-<br>
-
 <span class='badge bg-secondary'>
-{ICECBPdata$Custody[i]}
+In DHS Custody?: {ICECBPdata$Custody[i]}
 </span>
 
-<br><br>
-
-<strong>Cause of Death (Official):</strong>
-<br>
-
 <span class='badge bg-primary'>
-{ICECBPdata$`Cause of Death (Official)`[i]}
+Cause of Death: {ICECBPdata$`Cause of Death (Official)`[i]}
 </span>
 
 </p>
@@ -154,4 +146,3 @@ View Source Documents
 knitr::asis_output(cards)
 
 ```
-

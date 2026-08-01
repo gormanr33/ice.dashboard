@@ -2,10 +2,5 @@
 title: "ICE + CBP Deaths Dashboard"
 ---
 
-This is a Quarto website.
+Coming Soon!
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```

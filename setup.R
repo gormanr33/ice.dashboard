@@ -8,7 +8,9 @@ packages <- c(
   "reactable",
   "DT",
   "glue",
-  "htmltools"
+  "htmltools",
+  "dplyr"
+  
 )
 
 installed <- rownames(installed.packages())
