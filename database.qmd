@@ -19,6 +19,14 @@ source("setup.R")
 
 ::: {.callout-note appearance="simple"}
 
+## Helpful Tip 
+
+You can hover your mouse over the “Cause of Death (Official)”, "Cause of Death (Unofficial)", "Facilities & Transfers", and "Other Notes" column entries to read the full text associated with the profile. The formatting of this table is a work in progress.
+
+:::
+
+:::
+
 ## About the Database
 
 [Description Here]

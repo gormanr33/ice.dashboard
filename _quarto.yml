@@ -8,15 +8,15 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Home
-      - href: about.qmd
         text: About
       - href: database.qmd
         text: Database
       - href: sources.qmd
         text: Sources
       - href: cards2.qmd
-        text: Cards
+        text: Individual Data Cards
+      - href: faq.qmd
+        text: FAQ
   
   page-footer:
     left: "Copyright 2026, Rachel Gorman"
