@@ -1,91 +1,107 @@
-
+```css
 /* ============================================================
-   1. COLOR PALETTE
+   QUARTO + LUMEN CUSTOM STYLES
+   Base theme: Lumen
+   File type: CSS
    ============================================================ */
 
-/*
-   Rosy Granite     #757083
-   Cool Steel       #8a95a5
-   Ash Grey         #b9c6ae
-   Dark Spruce      #2f4b26
-   Midnight Violet  #2c1320
-*/
 
-$primary: #2f4b26;
-$secondary: #757083;
-$success: #b9c6ae;
-$info: #8a95a5;
-$dark: #2c1320;
-$light: #f5f6f2;
-
-
-/* Custom CSS variables */
+/* ------------------------------------------------------------
+   COLOR PALETTE
+   ------------------------------------------------------------ */
 
 :root {
-
   --rosy-granite: #757083;
   --cool-steel: #8a95a5;
   --ash-grey: #b9c6ae;
   --dark-spruce: #2f4b26;
   --midnight-violet: #2c1320;
 
-  --white: #ffffff;
-  --background-soft: #f5f6f2;
-  --background-muted: #eef0ec;
-
-  --text: #2c1320;
-  --text-muted: #757083;
-
-  --border: #d9ddd7;
-
-  --link: #2f4b26;
-  --link-hover: #2c1320;
-
-  --shadow:
-    0 3px 12px rgba(44, 19, 32, 0.07);
-
-  --shadow-hover:
-    0 7px 20px rgba(44, 19, 32, 0.12);
-
-  --radius: 8px;
-  --radius-small: 5px;
-
-  --content-width: 1200px;
+  --light-background: #f7f8f5;
+  --border-color: #d8ddd5;
 }
 
 
-/* ============================================================
-   2. GENERAL PAGE
-   ============================================================ */
+/* ------------------------------------------------------------
+   GENERAL
+   ------------------------------------------------------------ */
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--white);
-  color: var(--text);
-
-  font-size: 16px;
+  color: var(--midnight-violet);
+  background-color: #ffffff;
   line-height: 1.7;
-
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
 }
 
 
-/* Main Quarto content */
+/* ------------------------------------------------------------
+   NAVBAR
+   ------------------------------------------------------------ */
+
+.navbar {
+  background-color: var(--midnight-violet) !important;
+  border-bottom: 4px solid var(--dark-spruce);
+}
+
+.navbar-brand {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--ash-grey) !important;
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--ash-grey) !important;
+}
+
+
+/* Mobile navbar */
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler-icon {
+  filter: brightness(0) invert(1);
+}
+
+
+/* Dropdown */
+
+.navbar .dropdown-menu {
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+.navbar .dropdown-item:hover {
+  background-color: var(--light-background);
+  color: var(--dark-spruce);
+}
+
+
+/* ------------------------------------------------------------
+   MAIN CONTENT
+   ------------------------------------------------------------ */
 
 #quarto-content {
-  max-width: var(--content-width);
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 
 
-/* ============================================================
-   3. TYPOGRAPHY
-   ============================================================ */
+/* ------------------------------------------------------------
+   HEADINGS
+   ------------------------------------------------------------ */
 
 h1,
 h2,
@@ -95,7 +111,6 @@ h5,
 h6 {
   color: var(--midnight-violet);
   font-weight: 700;
-  line-height: 1.25;
 }
 
 h1 {
@@ -110,279 +125,78 @@ h3 {
   font-size: clamp(1.3rem, 3vw, 1.7rem);
 }
 
-h4 {
-  font-size: 1.25rem;
-}
 
-h5 {
-  font-size: 1.1rem;
-}
-
-h6 {
-  font-size: 1rem;
-}
-
-
-/* Paragraphs */
-
-p {
-  margin-bottom: 1rem;
-}
-
-
-/* Lead text */
-
-.lead {
-  color: var(--rosy-granite);
-  font-size: 1.15rem;
-  line-height: 1.65;
-}
-
-
-/* ============================================================
-   4. LINKS
-   ============================================================ */
+/* ------------------------------------------------------------
+   LINKS
+   ------------------------------------------------------------ */
 
 a {
   color: var(--dark-spruce);
-
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
-
-  transition:
-    color 0.2s ease,
-    opacity 0.2s ease;
 }
 
 a:hover {
   color: var(--midnight-violet);
-  opacity: 0.85;
 }
 
 
-/* ============================================================
-   5. LUMEN NAVBAR
-   ============================================================ */
-
-/*
-   Lumen normally uses a light Bootstrap navbar.
-   We retain the Lumen structure but give it your palette.
-*/
-
-.navbar {
-  background-color: var(--midnight-violet) !important;
-
-  border-bottom: 4px solid var(--dark-spruce);
-
-  padding-top: 0.65rem;
-  padding-bottom: 0.65rem;
-
-  box-shadow:
-    0 2px 8px rgba(44, 19, 32, 0.08);
-}
-
-
-/* Site title */
-
-.navbar-brand {
-  color: var(--white) !important;
-
-  font-weight: 700;
-  letter-spacing: 0.01em;
-}
-
-
-/* Navigation links */
-
-.navbar-nav .nav-link {
-  color: rgba(255, 255, 255, 0.82) !important;
-
-  font-weight: 500;
-
-  margin-left: 0.15rem;
-  margin-right: 0.15rem;
-
-  transition:
-    color 0.2s ease,
-    background-color 0.2s ease;
-}
-
-.navbar-nav .nav-link:hover {
-  color: var(--white) !important;
-  background-color: rgba(185, 198, 174, 0.12);
-}
-
-.navbar-nav .nav-link.active {
-  color: var(--ash-grey) !important;
-  font-weight: 700;
-}
-
-
-/* Dropdown menus */
-
-.navbar .dropdown-menu {
-  border: 1px solid var(--border);
-  border-radius: var(--radius-small);
-
-  box-shadow: var(--shadow);
-
-  padding: 0.4rem;
-}
-
-.navbar .dropdown-item {
-  color: var(--midnight-violet);
-
-  border-radius: 4px;
-
-  padding: 0.5rem 0.75rem;
-}
-
-.navbar .dropdown-item:hover {
-  background-color: var(--background-soft);
-  color: var(--dark-spruce);
-}
-
-
-/* Mobile menu button */
-
-.navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.4);
-}
-
-.navbar-toggler:focus {
-  box-shadow: 0 0 0 0.15rem rgba(185, 198, 174, 0.35);
-}
-
-.navbar-toggler-icon {
-  filter: brightness(0) invert(1);
-}
-
-
-/* ============================================================
-   6. QUARTO TITLE BLOCK
-   ============================================================ */
+/* ------------------------------------------------------------
+   TITLE BLOCK
+   ------------------------------------------------------------ */
 
 .quarto-title-block {
-  background-color: var(--background-soft);
-
-  border-bottom: 1px solid var(--border);
-
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
-
-  margin-bottom: 3rem;
+  background-color: var(--light-background);
+  border-bottom: 1px solid var(--border-color);
 }
-
-
-/* Page title */
 
 .quarto-title-block .title {
   color: var(--midnight-violet);
-
-  font-weight: 800;
-
-  max-width: 900px;
 }
-
-
-/* Subtitle */
 
 .quarto-title-block .subtitle {
   color: var(--rosy-granite);
-
-  font-size: 1.15rem;
-
-  max-width: 750px;
 }
 
 
-/* ============================================================
-   7. BUTTONS
-   ============================================================ */
-
-.btn {
-  border-radius: var(--radius-small);
-
-  font-weight: 600;
-
-  padding: 0.6rem 1.1rem;
-
-  transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-
-/* Primary */
+/* ------------------------------------------------------------
+   BUTTONS
+   ------------------------------------------------------------ */
 
 .btn-primary {
-  background-color: var(--dark-spruce);
-  border-color: var(--dark-spruce);
-
-  color: var(--white);
+  background-color: var(--dark-spruce) !important;
+  border-color: var(--dark-spruce) !important;
+  color: #ffffff !important;
 }
 
-.btn-primary:hover,
-.btn-primary:focus {
-  background-color: var(--midnight-violet);
-  border-color: var(--midnight-violet);
-
-  color: var(--white);
-
-  transform: translateY(-1px);
-
-  box-shadow: var(--shadow);
+.btn-primary:hover {
+  background-color: var(--midnight-violet) !important;
+  border-color: var(--midnight-violet) !important;
 }
-
-
-/* Secondary */
-
-.btn-secondary {
-  background-color: var(--rosy-granite);
-  border-color: var(--rosy-granite);
-
-  color: var(--white);
-}
-
-.btn-secondary:hover,
-.btn-secondary:focus {
-  background-color: var(--midnight-violet);
-  border-color: var(--midnight-violet);
-
-  color: var(--white);
-}
-
-
-/* Outline button */
 
 .btn-outline-primary {
-  color: var(--dark-spruce);
-  border-color: var(--dark-spruce);
+  color: var(--dark-spruce) !important;
+  border-color: var(--dark-spruce) !important;
 }
 
 .btn-outline-primary:hover {
-  background-color: var(--dark-spruce);
-  border-color: var(--dark-spruce);
-
-  color: var(--white);
+  background-color: var(--dark-spruce) !important;
+  color: #ffffff !important;
 }
 
 
-/* ============================================================
-   8. CARDS
-   ============================================================ */
+/* ------------------------------------------------------------
+   CARDS
+   ------------------------------------------------------------ */
 
 .card {
-  background-color: var(--white);
+  background-color: #ffffff;
 
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
 
-  border-radius: var(--radius);
-
-  box-shadow: var(--shadow);
+  box-shadow:
+    0 3px 12px rgba(44, 19, 32, 0.08);
 
   overflow: hidden;
 
@@ -394,76 +208,38 @@ a:hover {
 .card:hover {
   transform: translateY(-2px);
 
-  box-shadow: var(--shadow-hover);
+  box-shadow:
+    0 7px 20px rgba(44, 19, 32, 0.13);
 }
-
-
-/* Card header */
 
 .card-header {
-  background-color: var(--background-soft);
-
-  border-bottom: 1px solid var(--border);
-
+  background-color: var(--light-background);
   color: var(--midnight-violet);
 
-  font-weight: 700;
+  border-bottom: 1px solid var(--border-color);
 }
-
-
-/* Card body */
-
-.card-body {
-  padding: 1.4rem;
-}
-
-
-/* Card title */
 
 .card-title {
   color: var(--dark-spruce);
-
-  font-weight: 700;
 }
 
 
-/* Card footer */
-
-.card-footer {
-  background-color: var(--background-soft);
-
-  border-top: 1px solid var(--border);
-
-  color: var(--text-muted);
-}
-
-
-/* ============================================================
-   9. QUARTO LISTINGS
-   ============================================================ */
-
-/*
-   Useful for pages using:
-
-   listing:
-     type: grid
-*/
+/* ------------------------------------------------------------
+   QUARTO LISTING CARDS
+   ------------------------------------------------------------ */
 
 .quarto-listing {
   margin-top: 2rem;
 }
 
-
-/* Listing grid items */
-
 .quarto-grid-item {
-  background-color: var(--white);
+  background-color: #ffffff;
 
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
 
-  border-radius: var(--radius);
-
-  box-shadow: var(--shadow);
+  box-shadow:
+    0 3px 12px rgba(44, 19, 32, 0.08);
 
   overflow: hidden;
 
@@ -473,277 +249,126 @@ a:hover {
 }
 
 .quarto-grid-item:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 
-  box-shadow: var(--shadow-hover);
+  box-shadow:
+    0 7px 20px rgba(44, 19, 32, 0.13);
 }
-
-
-/* Listing titles */
 
 .quarto-grid-item .card-title {
   color: var(--dark-spruce);
 }
-
-
-/* Listing descriptions */
 
 .quarto-grid-item .card-text {
   color: var(--rosy-granite);
 }
 
 
-/* Listing metadata */
-
-.quarto-grid-item .listing-date,
-.quarto-grid-item .listing-author {
-  color: var(--rosy-granite);
-
-  font-size: 0.9rem;
-}
-
-
-/* ============================================================
-   10. CUSTOM RECORD CARDS
-   ============================================================ */
-
-/*
-   Useful for your source/document records.
-*/
-
-.custom-card {
-  background-color: var(--white);
-
-  border: 1px solid var(--border);
-  border-left: 5px solid var(--dark-spruce);
-
-  border-radius: var(--radius);
-
-  padding: 1.5rem;
-
-  margin: 1.5rem 0;
-
-  box-shadow: var(--shadow);
-}
-
-.custom-card h3,
-.custom-card h4 {
-  color: var(--midnight-violet);
-
-  margin-top: 0;
-}
-
-
-/* Highlighted card */
-
-.highlight-card {
-  background-color: var(--ash-grey);
-
-  border-radius: var(--radius);
-
-  padding: 1.5rem;
-
-  margin: 1.5rem 0;
-
-  color: var(--midnight-violet);
-}
-
-
-/* Dark card */
-
-.dark-card {
-  background-color: var(--midnight-violet);
-
-  color: var(--white);
-
-  border-radius: var(--radius);
-
-  padding: 1.5rem;
-
-  margin: 1.5rem 0;
-
-  box-shadow: var(--shadow);
-}
-
-.dark-card h2,
-.dark-card h3,
-.dark-card h4 {
-  color: var(--white);
-}
-
-.dark-card a {
-  color: var(--ash-grey);
-}
-
-
-/* ============================================================
-   11. TABLES
-   ============================================================ */
+/* ------------------------------------------------------------
+   TABLES
+   ------------------------------------------------------------ */
 
 .table {
   width: 100%;
-
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-
-  border-collapse: collapse;
-
-  font-size: 0.95rem;
 }
-
-
-/* Table header */
 
 .table thead th {
   background-color: var(--midnight-violet);
+  color: #ffffff;
 
-  color: var(--white);
-
-  font-weight: 700;
-
-  border: none;
-
-  padding: 0.8rem;
+  border-color: var(--midnight-violet);
 }
-
-
-/* Table cells */
-
-.table tbody td {
-  padding: 0.75rem;
-
-  border-bottom: 1px solid var(--border);
-
-  vertical-align: top;
-}
-
-
-/* Alternating rows */
 
 .table tbody tr:nth-child(even) {
-  background-color: var(--background-soft);
+  background-color: var(--light-background);
 }
-
-
-/* Hover */
 
 .table tbody tr:hover {
-  background-color: var(--background-muted);
+  background-color: #eef1eb;
 }
 
 
-/* Horizontal scrolling */
+/* Horizontal scrolling on small screens */
 
 .table-responsive {
   overflow-x: auto;
-
   -webkit-overflow-scrolling: touch;
 }
 
 
-/* ============================================================
-   12. CODE
-   ============================================================ */
+/* ------------------------------------------------------------
+   CODE
+   ------------------------------------------------------------ */
 
 code {
-  background-color: var(--background-muted);
-
   color: var(--midnight-violet);
-
+  background-color: #eef1eb;
   border-radius: 4px;
-
   padding: 0.15rem 0.35rem;
-
-  font-size: 0.9em;
 }
-
 
 pre {
   background-color: #f1f2ef;
-
-  border: 1px solid var(--border);
-
-  border-radius: var(--radius-small);
-
-  padding: 1rem;
-
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
   overflow-x: auto;
 }
 
 pre code {
   background-color: transparent;
-
-  padding: 0;
 }
 
 
-/* ============================================================
-   13. BLOCKQUOTES
-   ============================================================ */
+/* ------------------------------------------------------------
+   BLOCKQUOTES
+   ------------------------------------------------------------ */
 
 blockquote {
-  background-color: var(--background-soft);
-
   border-left: 5px solid var(--dark-spruce);
 
-  border-radius:
-    0
-    var(--radius-small)
-    var(--radius-small)
-    0;
+  background-color: var(--light-background);
 
   color: var(--rosy-granite);
 
   padding: 1rem 1.5rem;
-
-  margin: 1.5rem 0;
-}
-
-blockquote p:last-child {
-  margin-bottom: 0;
 }
 
 
-/* ============================================================
-   14. IMAGES
-   ============================================================ */
+/* ------------------------------------------------------------
+   CALLOUTS
+   ------------------------------------------------------------ */
 
-img {
-  max-width: 100%;
-  height: auto;
+.callout {
+  border-radius: 8px;
+}
 
-  border-radius: var(--radius-small);
+.callout.callout-note {
+  border-left-color: var(--cool-steel);
+}
+
+.callout.callout-tip {
+  border-left-color: var(--dark-spruce);
+}
+
+.callout.callout-important {
+  border-left-color: var(--midnight-violet);
+}
+
+.callout.callout-warning {
+  border-left-color: var(--rosy-granite);
 }
 
 
-/* Figures */
-
-figure {
-  margin: 2rem auto;
-}
-
-figcaption {
-  color: var(--rosy-granite);
-
-  font-size: 0.9rem;
-
-  text-align: center;
-
-  margin-top: 0.5rem;
-}
-
-
-/* ============================================================
-   15. TABLE OF CONTENTS
-   ============================================================ */
+/* ------------------------------------------------------------
+   TABLE OF CONTENTS
+   ------------------------------------------------------------ */
 
 #TOC {
-  border-left: 2px solid var(--border);
+  border-left: 2px solid var(--border-color);
 }
 
 #TOC a {
   color: var(--rosy-granite);
-
   text-decoration: none;
 }
 
@@ -753,17 +378,16 @@ figcaption {
 }
 
 
-/* ============================================================
-   16. SIDEBAR
-   ============================================================ */
+/* ------------------------------------------------------------
+   SIDEBAR
+   ------------------------------------------------------------ */
 
 .sidebar {
-  border-right: 1px solid var(--border);
+  border-right: 1px solid var(--border-color);
 }
 
 .sidebar-title {
   color: var(--midnight-violet);
-  font-weight: 700;
 }
 
 .sidebar-item a {
@@ -776,72 +400,78 @@ figcaption {
 }
 
 
-/* ============================================================
-   17. CALLOUTS
-   ============================================================ */
+/* ------------------------------------------------------------
+   CUSTOM CARDS
+   ------------------------------------------------------------ */
 
-.callout {
-  border-radius: var(--radius);
+.custom-card {
+  background-color: #ffffff;
 
-  box-shadow: none;
+  border: 1px solid var(--border-color);
+  border-left: 5px solid var(--dark-spruce);
+
+  border-radius: 8px;
+
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+
+  box-shadow:
+    0 3px 12px rgba(44, 19, 32, 0.08);
+}
+
+.custom-card h3,
+.custom-card h4 {
+  color: var(--midnight-violet);
+  margin-top: 0;
 }
 
 
-/* Note */
+/* Highlight card */
 
-.callout.callout-note {
-  border-left-color: var(--cool-steel);
+.highlight-card {
+  background-color: var(--ash-grey);
+  color: var(--midnight-violet);
+
+  border-radius: 8px;
+
+  padding: 1.5rem;
+  margin: 1.5rem 0;
 }
 
 
-/* Important */
+/* Dark card */
 
-.callout.callout-important {
-  border-left-color: var(--midnight-violet);
+.dark-card {
+  background-color: var(--midnight-violet);
+  color: #ffffff;
+
+  border-radius: 8px;
+
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.dark-card h2,
+.dark-card h3,
+.dark-card h4 {
+  color: #ffffff;
+}
+
+.dark-card a {
+  color: var(--ash-grey);
 }
 
 
-/* Warning */
-
-.callout.callout-warning {
-  border-left-color: var(--rosy-granite);
-}
-
-
-/* Tip */
-
-.callout.callout-tip {
-  border-left-color: var(--dark-spruce);
-}
-
-
-/* ============================================================
-   18. HORIZONTAL RULES
-   ============================================================ */
-
-hr {
-  border: 0;
-
-  border-top: 1px solid var(--border);
-
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-
-
-/* ============================================================
-   19. FOOTER
-   ============================================================ */
+/* ------------------------------------------------------------
+   FOOTER
+   ------------------------------------------------------------ */
 
 .nav-footer {
   background-color: var(--midnight-violet);
 
-  color: rgba(255, 255, 255, 0.8);
+  color: #ffffff;
 
   border-top: 4px solid var(--dark-spruce);
-
-  padding-top: 2rem;
-  padding-bottom: 2rem;
 }
 
 .nav-footer a {
@@ -849,63 +479,40 @@ hr {
 }
 
 .nav-footer a:hover {
-  color: var(--white);
+  color: #ffffff;
 }
-
-
-/* ============================================================
-   20. SEARCH
-   ============================================================ */
-
-#quarto-search {
-  color: var(--white);
-}
-
-.aa-DetachedSearchButton {
-  border-radius: var(--radius-small);
-}
-
-
-/* Search results */
-
-.aa-Panel {
-  border-radius: var(--radius);
-
-  box-shadow: var(--shadow-hover);
-}
-
-
-/* ============================================================
-   21. RESPONSIVE TABLES
-   ============================================================ */
-
-/*
-   On smaller screens, tables become horizontally scrollable
-   instead of forcing the entire page wider than the screen.
-*/
-
-@media (max-width: 767px) {
-
-  .table-responsive {
-    width: 100%;
-    overflow-x: auto;
-  }
-
-  .table {
-    min-width: 600px;
-  }
-
-}
-
-
-/* ============================================================
-   22. RESPONSIVE LAYOUT
-   ============================================================ */
 
 
 /* ------------------------------------------------------------
-   TABLETS
+   HORIZONTAL RULES
    ------------------------------------------------------------ */
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border-color);
+}
+
+
+/* ------------------------------------------------------------
+   IMAGES
+   ------------------------------------------------------------ */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+figure figcaption {
+  color: var(--rosy-granite);
+}
+
+
+/* ============================================================
+   MOBILE RESPONSIVE DESIGN
+   ============================================================ */
+
+
+/* Tablets */
 
 @media (max-width: 991px) {
 
@@ -914,43 +521,26 @@ hr {
     padding-right: 1.5rem;
   }
 
-  .quarto-title-block {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-
-  .navbar-nav .nav-link {
-    padding-top: 0.65rem;
-    padding-bottom: 0.65rem;
-  }
-
 }
 
 
-/* ------------------------------------------------------------
-   MOBILE
-   ------------------------------------------------------------ */
+/* Phones */
 
 @media (max-width: 767px) {
 
   body {
     font-size: 15px;
-
     line-height: 1.6;
   }
 
-
-  /* Content */
-
   #quarto-content {
     width: 100%;
-
     padding-left: 1rem;
     padding-right: 1rem;
   }
 
 
-  /* Typography */
+  /* Headings */
 
   h1 {
     font-size: 2rem;
@@ -968,21 +558,11 @@ hr {
   /* Title */
 
   .quarto-title-block {
-    padding: 2.25rem 1rem;
-
-    margin-bottom: 2rem;
-  }
-
-  .quarto-title-block .subtitle {
-    font-size: 1rem;
+    padding: 2rem 1rem;
   }
 
 
   /* Cards */
-
-  .card {
-    margin-bottom: 1rem;
-  }
 
   .card-body {
     padding: 1rem;
@@ -995,27 +575,10 @@ hr {
   }
 
 
-  /* Buttons */
-
-  .btn {
-    margin-bottom: 0.5rem;
-  }
-
-
-  /* Images */
-
-  figure {
-    margin: 1.5rem 0;
-  }
-
-
   /* Footer */
 
   .nav-footer {
     text-align: center;
-
-    padding-left: 1rem;
-    padding-right: 1rem;
   }
 
 
@@ -1029,35 +592,16 @@ hr {
     word-wrap: break-word;
   }
 
-
-  /* Code */
-
-  pre {
-    max-width: 100%;
-
-    font-size: 0.8rem;
-  }
-
 }
 
 
-/* ============================================================
-   23. SMALL PHONES
-   ============================================================ */
+/* Very small phones */
 
 @media (max-width: 480px) {
 
-  body {
-    font-size: 14px;
-  }
-
   #quarto-content {
-    padding-left: 0.8rem;
-    padding-right: 0.8rem;
-  }
-
-  .quarto-title-block {
-    padding: 2rem 0.8rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 
   h1 {
@@ -1072,26 +616,17 @@ hr {
     font-size: 1.2rem;
   }
 
-  .card-body {
-    padding: 0.85rem;
-  }
-
 }
 
 
 /* ============================================================
-   24. ACCESSIBILITY
+   ACCESSIBILITY
    ============================================================ */
-
-
-/* Keyboard focus */
 
 a:focus-visible,
 button:focus-visible,
-.btn:focus-visible,
-.nav-link:focus-visible {
+.btn:focus-visible {
   outline: 3px solid var(--cool-steel);
-
   outline-offset: 3px;
 }
 
@@ -1112,73 +647,4 @@ button:focus-visible,
   }
 
 }
-
-
-/* ============================================================
-   25. UTILITY CLASSES
-   ============================================================ */
-
-
-/* Text */
-
-.text-muted {
-  color: var(--rosy-granite) !important;
-}
-
-.text-spruce {
-  color: var(--dark-spruce) !important;
-}
-
-.text-violet {
-  color: var(--midnight-violet) !important;
-}
-
-.text-steel {
-  color: var(--cool-steel) !important;
-}
-
-
-/* Backgrounds */
-
-.bg-soft {
-  background-color: var(--background-soft) !important;
-}
-
-.bg-ash {
-  background-color: var(--ash-grey) !important;
-}
-
-.bg-violet {
-  background-color: var(--midnight-violet) !important;
-}
-
-.bg-spruce {
-  background-color: var(--dark-spruce) !important;
-}
-
-
-/* Borders */
-
-.border-soft {
-  border-color: var(--border) !important;
-}
-
-
-/* Center content */
-
-.text-center {
-  text-align: center;
-}
-
-
-/* Section spacing */
-
-.section-space {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-}
-
-
-/* ============================================================
-   END OF STYLES
-   ============================================================ */
+```
