@@ -61,14 +61,15 @@ library(htmltools)
 # Helper function for long-text cells
 # ------------------------------------------------------------
 
-long_text <- function(value, preview_length = 60) {
+long_text <- function(value, preview_length = 70) {
 
-  # Handle missing values
-  if (is.null(value) || is.na(value) || value == "") {
+  # Convert to character safely
+  value <- as.character(value)
+
+  # Handle missing/empty values
+  if (length(value) == 0 || is.na(value) || value == "") {
     return("")
   }
-
-  value <- as.character(value)
 
   # Create shortened preview
   preview <- if (nchar(value) > preview_length) {
@@ -80,18 +81,20 @@ long_text <- function(value, preview_length = 60) {
     value
   }
 
-  # Create tooltip
-  div(
+  # Return HTML for the cell
+  htmltools::div(
     class = "tooltip-cell",
 
-    span(
+    htmltools::span(
       class = "tooltip-preview",
       preview
     ),
 
-    span(
+    htmltools::span(
       class = "custom-tooltip",
-      value
+      htmltools::HTML(
+        htmltools::htmlEscape(value)
+      )
     )
   )
 }
@@ -208,60 +211,30 @@ reactable(
     # Long text columns
     # --------------------------------------------------------
 
-    `Cause of Death (Official)` = colDef(
+      `Cause of Death (Official)` = colDef(
+    minWidth = 250,
+    width = 300,
+    cell = function(value) {
+      long_text(value, preview_length = 70)
+    }
+  ),
 
-      minWidth = 250,
-      width = 300,
+  `Cause of Death (Unofficial)` = colDef(
+    minWidth = 250,
+    width = 300,
+    cell = function(value) {
+      long_text(value, preview_length = 70)
+    }
+  ),
 
-      cell = function(value) {
-        long_text(
-          value,
-          preview_length = 70
-        )
-      }
-    ),
-
-
-    `Cause of Death (Unofficial)` = colDef(
-
-      minWidth = 250,
-      width = 300,
-
-      cell = function(value) {
-        long_text(
-          value,
-          preview_length = 70
-        )
-      }
-    ),
-
-
-    `Facilities & Transfers` = colDef(
-
-      minWidth = 280,
-      width = 350,
-
-      cell = function(value) {
-        long_text(
-          value,
-          preview_length = 70
-        )
-      }
-    ),
-
-
-    `Other Notes` = colDef(
-
-      minWidth = 280,
-      width = 350,
-
-      cell = function(value) {
-        long_text(
-          value,
-          preview_length = 70
-        )
-      }
+  `Facilities & Transfers` = colDef(
+    minWidth = 280,
+    width = 350,
+    cell = function(value) {
+      long_text(value, preview_length = 70)
+     }
     )
   )
 )
+
 ```
