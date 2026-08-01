@@ -1,5 +1,5 @@
 ---
-title: "Cards2"
+title: "Individual Data Cards"
 format: 
   html:
     theme: lumen
