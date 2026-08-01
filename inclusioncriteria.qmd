@@ -2,37 +2,37 @@
 title: "Inclusion Criteria"
 ---
 
-:::
+::: {.text-chunk}
 
-What is this project about? [Move to homepage]
-
-:::
-
-
-:::
-
-How do I choose which deaths to include vs exclude?
+###What is this project about? [Move to homepage]
 
 :::
 
 
-:::
+::: {.text-chunk}
 
-How do I choose my sources?
-
-:::
-
-
-:::
-
-Why do you include both official and unofficial causes of death?
+###How do I choose which deaths to include vs exclude?
 
 :::
 
 
+::: {.text-chunk}
+
+###How do I choose my sources?
+
 :::
 
-Why do you include facilities and transfers?
+
+::: {.text-chunk}
+
+###Why do you include both official and unofficial causes of death?
+
+:::
+
+
+::: {.text-chunk}
+
+###Why do you include facilities and transfers?
 
 :::
 
