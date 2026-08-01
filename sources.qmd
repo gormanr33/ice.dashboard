@@ -1,6 +1,14 @@
 ---
 title: "Source Documents"
 
+format:
+  html:
+    theme: lumen
+    css: styles.css
+    toc: false
+    smooth-scroll: true
+    embed-resources: true
+
 listing:
   contents: "sources/**/index.qmd"
   type: grid
@@ -12,3 +20,12 @@ listing:
     - date
     - description
 ---
+
+<style>
+#quarto-content {
+  max-width: 95vw;
+  width: 95vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>

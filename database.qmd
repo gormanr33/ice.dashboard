@@ -1,6 +1,22 @@
 ---
 title: "Database"
+
+format:
+  html:
+    theme: lumen
+    css: styles.css
+    toc: false
+    smooth-scroll: true
+    embed-resources: true
+
 ---
+
+<style>
+#quarto-content {
+  max-width: 95vw;
+  width: 95vw;
+}
+</style>
 
 ```{r}
 #| include: false
