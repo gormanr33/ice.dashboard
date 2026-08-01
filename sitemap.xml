@@ -2,58 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://gormanr33.github.io/ice.dashboard/sources.html</loc>
-    <lastmod>2026-08-01T01:48:23.055Z</lastmod>
+    <lastmod>2026-08-01T02:08:12.402Z</lastmod>
   </url>
   <url>
     <loc>https://gormanr33.github.io/ice.dashboard/sources/2026.01.05 - Luis Gustavo Núñez Cáceres/index.html</loc>
-    <lastmod>2026-08-01T01:48:23.105Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gormanr33.github.io/ice.dashboard/sources/2026.01.09 - Parady La/index.html</loc>
-    <lastmod>2026-08-01T01:48:23.171Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gormanr33.github.io/ice.dashboard/sources/2026.01.07 - Renee Nicole Good/index.html</loc>
-    <lastmod>2026-08-01T01:48:23.167Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gormanr33.github.io/ice.dashboard/sources/2026.01.14 - Heber Sánchez Domínguez/index.html</loc>
-    <lastmod>2026-08-01T01:48:23.176Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gormanr33.github.io/ice.dashboard/test.html</loc>
-    <lastmod>2026-08-01T01:48:23.922Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gormanr33.github.io/ice.dashboard/database.html</loc>
-    <lastmod>2026-08-01T01:48:23.055Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gormanr33.github.io/ice.dashboard/about.html</loc>
-    <lastmod>2026-08-01T01:48:23.054Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gormanr33.github.io/ice.dashboard/cards2.html</loc>
-    <lastmod>2026-08-01T01:48:23.054Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gormanr33.github.io/ice.dashboard/index.html</loc>
-    <lastmod>2026-08-01T01:48:23.055Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gormanr33.github.io/ice.dashboard/sources/2026.01.03 - Geraldo Lunas Campos/index.html</loc>
-    <lastmod>2026-08-01T01:48:23.068Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gormanr33.github.io/ice.dashboard/sources/2026.01.14 - Víctor Manuel Díaz/index.html</loc>
-    <lastmod>2026-08-01T01:48:23.220Z</lastmod>
+    <lastmod>2026-08-01T02:08:12.447Z</lastmod>
   </url>
   <url>
     <loc>https://gormanr33.github.io/ice.dashboard/sources/2026.07.14 - Juan Jairo Coronilla Duran/index.html</loc>
-    <lastmod>2026-08-01T01:48:23.871Z</lastmod>
+    <lastmod>2026-08-01T02:08:13.145Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gormanr33.github.io/ice.dashboard/sources/2026.01.09 - Parady La/index.html</loc>
+    <lastmod>2026-08-01T02:08:12.507Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gormanr33.github.io/ice.dashboard/sources/2026.01.14 - Víctor Manuel Díaz/index.html</loc>
+    <lastmod>2026-08-01T02:08:12.551Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gormanr33.github.io/ice.dashboard/sources/2026.01.03 - Geraldo Lunas Campos/index.html</loc>
+    <lastmod>2026-08-01T02:08:12.414Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gormanr33.github.io/ice.dashboard/sources/2026.01.14 - Heber Sánchez Domínguez/index.html</loc>
+    <lastmod>2026-08-01T02:08:12.512Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gormanr33.github.io/ice.dashboard/index.html</loc>
+    <lastmod>2026-08-01T02:08:12.402Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gormanr33.github.io/ice.dashboard/cards2.html</loc>
+    <lastmod>2026-08-01T02:08:12.401Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gormanr33.github.io/ice.dashboard/about.html</loc>
+    <lastmod>2026-08-01T02:08:12.401Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gormanr33.github.io/ice.dashboard/database.html</loc>
+    <lastmod>2026-08-01T02:08:12.402Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gormanr33.github.io/ice.dashboard/test.html</loc>
+    <lastmod>2026-08-01T02:08:13.192Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gormanr33.github.io/ice.dashboard/sources/2026.02.16 - Lorth Sim/index.html</loc>
+    <lastmod>2026-08-01T02:08:12.652Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gormanr33.github.io/ice.dashboard/sources/2026.01.24 - Alex Pretti/index.html</loc>
+    <lastmod>2026-08-01T02:08:12.574Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gormanr33.github.io/ice.dashboard/sources/2026.01.07 - Renee Nicole Good/index.html</loc>
+    <lastmod>2026-08-01T02:08:12.503Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gormanr33.github.io/ice.dashboard/sources/2026.02.16 - Jairo Garcia-Hernandez/index.html</loc>
+    <lastmod>2026-08-01T02:08:12.649Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gormanr33.github.io/ice.dashboard/sources/2026.02.17 - Linda Davis/index.html</loc>
+    <lastmod>2026-08-01T02:08:12.694Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gormanr33.github.io/ice.dashboard/sources/2026.02.02 - 4 Unnamed Haitian Women/index.html</loc>
+    <lastmod>2026-08-01T02:08:12.647Z</lastmod>
   </url>
   <url>
     <loc>https://gormanr33.github.io/ice.dashboard/sources/2026.01.06 - Luis Beltrán Yáñez–Cruz/index.html</loc>
-    <lastmod>2026-08-01T01:48:23.155Z</lastmod>
+    <lastmod>2026-08-01T02:08:12.492Z</lastmod>
   </url>
 </urlset>
