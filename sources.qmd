@@ -2,7 +2,7 @@
 title: "Source Documents"
 
 listing:
-  contents: "sources/*/index.qmd"
+  contents: "sources/**/index.qmd"
   type: grid
   grid-columns: 3
   sort:
