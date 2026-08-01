@@ -15,6 +15,10 @@ website:
         text: Sources
       - href: cards2.qmd
         text: Individual Data Cards
+      - href: inclusioncriteria.qmd
+        text: Inclusion Criteria
+      - href: variables.qmd
+        text: Variables
       - href: faq.qmd
         text: FAQ
   
