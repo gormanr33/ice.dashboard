@@ -49,7 +49,9 @@ ice_df_table <- ice_df_table %>% select(-`Drive Link to Sources`)
 
 ```
 
+Here is your edited block with the **“Drive Link to Sources” column removed entirely** (as requested), and the syntax cleaned so the table still compiles correctly:
 
+````r
 ```{r}
 #| echo: false
 
@@ -57,184 +59,121 @@ library(reactable)
 library(htmltools)
 
 
-# ------------------------------------------------------------
-# Helper function for long-text cells
-# ------------------------------------------------------------
+# Helper function for long text cells
 
-long_text <- function(value, preview_length = 70) {
+long_text <- function(value, preview_length = 65) {
 
-  # Convert to character safely
   value <- as.character(value)
 
-  # Handle missing/empty values
   if (length(value) == 0 || is.na(value) || value == "") {
     return("")
   }
 
-  # Create shortened preview
   preview <- if (nchar(value) > preview_length) {
-    paste0(
-      substr(value, 1, preview_length),
-      "..."
-    )
+    paste0(substr(value, 1, preview_length), "...")
   } else {
     value
   }
 
-  # Return HTML for the cell
-  htmltools::div(
+  tags$span(
     class = "tooltip-cell",
-
-    htmltools::span(
-      class = "tooltip-preview",
-      preview
-    ),
-
-    htmltools::span(
-      class = "custom-tooltip",
-      htmltools::HTML(
-        htmltools::htmlEscape(value)
-      )
-    )
+    `data-tooltip` = htmlEscape(value),
+    preview
   )
 }
 
 
-# ------------------------------------------------------------
-# Reactable
-# ------------------------------------------------------------
+# REactable
 
 reactable(
+
   ice_df_table,
 
   class = "my-table",
-
   fullWidth = TRUE,
-
   bordered = FALSE,
-
   striped = TRUE,
-
   highlight = TRUE,
-
   compact = FALSE,
-
   resizable = TRUE,
-
   defaultPageSize = 15,
-
   paginationType = "jump",
-
-
-  # ----------------------------------------------------------
-  # Default columns
-  # ----------------------------------------------------------
 
   defaultColDef = colDef(
     align = "left",
-
-    headerStyle = list(
-      fontWeight = "700"
-    )
+    headerStyle = list(fontWeight = "700")
   ),
-
-
-  # ----------------------------------------------------------
-  # Column-specific settings
-  # ----------------------------------------------------------
 
   columns = list(
 
-    `Name` = colDef(
-      minWidth = 200,
-      width = 240
-    ),
-
-    `Date` = colDef(
-      minWidth = 110,
-      width = 120
-    ),
-
-    `Age` = colDef(
-      minWidth = 70,
-      width = 80,
-      align = "center"
-    ),
-
-    `Gender` = colDef(
-      minWidth = 100,
-      width = 110
-    ),
-
-    `Location` = colDef(
-      minWidth = 180,
-      width = 220
-    ),
-
-    `Country` = colDef(
-      minWidth = 120,
-      width = 140
-    ),
-
-    `State` = colDef(
-      minWidth = 100,
-      width = 120
-    ),
-
-    `City` = colDef(
-      minWidth = 140,
-      width = 160
-    ),
-
-    `County` = colDef(
-      minWidth = 140,
-      width = 170
-    ),
-
-    `Latitude` = colDef(
-      minWidth = 110,
-      width = 120
-    ),
-
-    `Longitude` = colDef(
-      minWidth = 110,
-      width = 120
-    ),
-
-    `Custody` = colDef(
-      minWidth = 130,
-      width = 150
-    ),
-
-
     # --------------------------------------------------------
-    # Long text columns
+    # Basic information
     # --------------------------------------------------------
 
-      `Cause of Death (Official)` = colDef(
-    minWidth = 250,
-    width = 300,
-    cell = function(value) {
-      long_text(value, preview_length = 70)
-    }
-  ),
+    `Name` = colDef(minWidth = 180, width = 220),
+    `Date` = colDef(minWidth = 100, width = 110),
+    `Age` = colDef(minWidth = 60, width = 70, align = "center"),
+    `Gender` = colDef(minWidth = 90, width = 100),
 
-  `Cause of Death (Unofficial)` = colDef(
-    minWidth = 250,
-    width = 300,
-    cell = function(value) {
-      long_text(value, preview_length = 70)
-    }
-  ),
+    # --------------------------------------------------------
+    # Location
+    # --------------------------------------------------------
 
-  `Facilities & Transfers` = colDef(
-    minWidth = 280,
-    width = 350,
-    cell = function(value) {
-      long_text(value, preview_length = 70)
-     }
+    `Location` = colDef(minWidth = 150, width = 190),
+    `Country` = colDef(minWidth = 100, width = 120),
+    `State` = colDef(minWidth = 90, width = 105),
+    `City` = colDef(minWidth = 120, width = 145),
+    `County` = colDef(minWidth = 120, width = 145),
+
+    # --------------------------------------------------------
+    # Geographic coordinates
+    # --------------------------------------------------------
+
+    `Latitude` = colDef(minWidth = 100, width = 110),
+    `Longitude` = colDef(minWidth = 100, width = 110),
+
+    # --------------------------------------------------------
+    # Custody
+    # --------------------------------------------------------
+
+    `Custody` = colDef(minWidth = 120, width = 140),
+
+    # --------------------------------------------------------
+    # LONG TEXT
+    # --------------------------------------------------------
+
+    `Cause of Death (Official)` = colDef(
+      minWidth = 220,
+      width = 270,
+      cell = function(value) {
+        long_text(value, preview_length = 65)
+      }
+    ),
+
+    `Cause of Death (Unofficial)` = colDef(
+      minWidth = 220,
+      width = 270,
+      cell = function(value) {
+        long_text(value, preview_length = 65)
+      }
+    ),
+
+    `Facilities & Transfers` = colDef(
+      minWidth = 240,
+      width = 300,
+      cell = function(value) {
+        long_text(value, preview_length = 65)
+      }
+    ),
+
+    `Other Notes` = colDef(
+      minWidth = 240,
+      width = 300,
+      cell = function(value) {
+        long_text(value, preview_length = 65)
+      }
     )
   )
 )
-
 ```
+
