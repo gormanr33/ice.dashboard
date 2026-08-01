@@ -49,9 +49,7 @@ ice_df_table <- ice_df_table %>% select(-`Drive Link to Sources`)
 
 ```
 
-Here is your edited block with the **“Drive Link to Sources” column removed entirely** (as requested), and the syntax cleaned so the table still compiles correctly:
 
-````r
 ```{r}
 #| echo: false
 
@@ -60,7 +58,6 @@ library(htmltools)
 
 
 # Helper function for long text cells
-
 long_text <- function(value, preview_length = 65) {
 
   value <- as.character(value)
@@ -75,10 +72,12 @@ long_text <- function(value, preview_length = 65) {
     value
   }
 
-  tags$span(
-    class = "tooltip-cell",
-    `data-tooltip` = htmlEscape(value),
-    preview
+  paste0(
+    '<span class="tooltip-cell" title="',
+    htmltools::htmlEscape(value, attribute = TRUE),
+    '">',
+    htmltools::htmlEscape(preview),
+    '</span>'
   )
 }
 
@@ -146,7 +145,7 @@ reactable(
       minWidth = 220,
       width = 270,
       cell = function(value) {
-        long_text(value, preview_length = 65)
+        html(long_text(value, 65))
       }
     ),
 
@@ -154,7 +153,7 @@ reactable(
       minWidth = 220,
       width = 270,
       cell = function(value) {
-        long_text(value, preview_length = 65)
+        html(long_text(value, 65))
       }
     ),
 
@@ -162,7 +161,7 @@ reactable(
       minWidth = 240,
       width = 300,
       cell = function(value) {
-        long_text(value, preview_length = 65)
+        html(long_text(value, 65))
       }
     ),
 
@@ -170,10 +169,10 @@ reactable(
       minWidth = 240,
       width = 300,
       cell = function(value) {
-        long_text(value, preview_length = 65)
+        html(long_text(value, 65))
       }
     )
-  )
-)
+  ) 
+) 
 ```
 
