@@ -19,13 +19,6 @@ listing:
     - title
     - date
     - description
----
 
-<style>
-#quarto-content {
-  max-width: 95vw;
-  width: 95vw;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
+page-layout: full
+---

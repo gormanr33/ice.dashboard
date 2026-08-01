@@ -9,14 +9,8 @@ format:
     smooth-scroll: true
     embed-resources: true
 
+page-layout: full
 ---
-
-<style>
-#quarto-content {
-  max-width: 95vw;
-  width: 95vw;
-}
-</style>
 
 ```{r}
 #| include: false
@@ -56,7 +50,6 @@ ice_df_table <- ice_df_table %>% select(-`Drive Link to Sources`)
 ```
 
 
-````r
 ```{r}
 #| echo: false
 
@@ -272,4 +265,3 @@ reactable(
   )
 )
 ```
-
