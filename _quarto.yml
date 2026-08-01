@@ -9,16 +9,16 @@ website:
     left:
       - href: index.qmd
         text: About
+      - href: Variables.qmd
+        text: Variables
+      - href: inclusioncriteria.qmd
+        text: Inclusion Criteria
       - href: database.qmd
         text: Database
       - href: sources.qmd
         text: Sources
       - href: cards2.qmd
         text: Individual Data Cards
-      - href: inclusioncriteria.qmd
-        text: Inclusion Criteria
-      - href: Variables.qmd
-        text: Variables
       - href: faq.qmd
         text: FAQ
   
