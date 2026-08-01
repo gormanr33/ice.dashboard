@@ -4328,14 +4328,16 @@ color: var(--ash-grey);
 color: var(--white);
 }
 
+
 .my-table {
 width: 100% !important;
 font-size: 0.9rem;
 border: 1px solid var(--border);
 border-radius: 8px;
-overflow: visible;
 box-shadow:
 0 2px 10px rgba(44, 19, 32, 0.08);
+
+overflow-x: auto !important;
 }
 
 .my-table .rt-th {
@@ -4343,6 +4345,7 @@ background-color: var(--midnight-violet) !important;
 color: #ffffff !important;
 font-weight: 700;
 border-bottom: none !important;
+white-space: normal !important;
 }
 .my-table .rt-th-content {
 color: #ffffff !important;
@@ -4354,13 +4357,13 @@ line-height: 1.3;
 color: var(--midnight-violet);
 border-bottom: 1px solid var(--border);
 vertical-align: middle;
+
 overflow: visible !important;
 }
 
 .my-table .rt-tr:nth-child(even) .rt-td {
 background-color: var(--cream);
 }
-
 .my-table .rt-tr:hover .rt-td {
 background-color: #eef1eb;
 }
@@ -4369,44 +4372,50 @@ background-color: #eef1eb;
 position: relative;
 display: block;
 width: 100%;
+white-space: nowrap;
+overflow: visible;
+text-overflow: ellipsis;
 cursor: help;
 }
-.tooltip-preview {
-display: block;
-max-width: 100%;
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
-}
-.custom-tooltip {
+
+.tooltip-cell::after {
+
+content: attr(data-tooltip);
 position: absolute;
-z-index: 99999;
+z-index: 10000;
 left: 0;
 bottom: calc(100% + 10px);
-width: 350px;
-max-width: 80vw;
+width: 360px;
+max-width: 75vw;
 padding: 12px 14px;
 background-color: var(--midnight-violet);
 color: #ffffff;
 font-size: 0.85rem;
+font-weight: 400;
 line-height: 1.5;
 text-align: left;
 white-space: normal;
+overflow-wrap: break-word;
 border-radius: 7px;
-box-shadow: 0 5px 18px rgba(44, 19, 32, 0.25);
+box-shadow:
+0 5px 18px rgba(44, 19, 32, 0.25);
+
 opacity: 0;
 visibility: hidden;
 pointer-events: none;
 transform: translateY(5px);
 transition:
 opacity 0.15s ease,
-transform 0.15s ease;
+transform 0.15s ease,
+visibility 0.15s ease;
 }
-.custom-tooltip::after {
+
+.tooltip-cell::before {
 content: "";
 position: absolute;
-top: 100%;
-left: 20px;
+z-index: 10001;
+left: 18px;
+bottom: calc(100% + 4px);
 border-width: 6px;
 border-style: solid;
 border-color:
@@ -4414,11 +4423,37 @@ var(--midnight-violet)
 transparent
 transparent
 transparent;
+opacity: 0;
+visibility: hidden;
+transition:
+opacity 0.15s ease,
+visibility 0.15s ease;
 }
-.tooltip-cell:hover .custom-tooltip {
+
+.tooltip-cell:hover::after,
+.tooltip-cell:hover::before {
 opacity: 1;
 visibility: visible;
 transform: translateY(0);
+}
+
+.source-link {
+display: inline-block;
+color: var(--dark-spruce) !important;
+font-weight: 600;
+text-decoration: none;
+padding: 0.35rem 0.65rem;
+border: 1px solid var(--dark-spruce);
+border-radius: 5px;
+white-space: nowrap;
+transition:
+background-color 0.2s ease,
+color 0.2s ease;
+}
+.source-link:hover {
+background-color: var(--dark-spruce);
+color: #ffffff !important;
+text-decoration: none;
 }
 
 .my-table .rt-pagination {
@@ -4430,12 +4465,87 @@ border-top: 1px solid var(--border);
 .my-table {
 font-size: 0.8rem;
 }
-.custom-tooltip {
+.tooltip-cell::after {
 width: 280px;
-max-width: 75vw;
+max-width: 70vw;
 font-size: 0.8rem;
 }
 }
+
+@media (max-width: 991px) {
+#quarto-content {
+padding-left: 1.5rem;
+padding-right: 1.5rem;
+}
+}
+@media (max-width: 767px) {
+body {
+font-size: 15px;
+line-height: 1.6;
+}
+#quarto-content {
+width: 100%;
+padding-left: 1rem;
+padding-right: 1rem;
+}
+
+h1 {
+font-size: 2rem;
+}
+h2 {
+font-size: 1.6rem;
+}
+h3 {
+font-size: 1.3rem;
+}
+
+.quarto-title-block {
+padding: 2rem 1rem;
+}
+
+.card-body {
+padding: 1rem;
+}
+.custom-card,
+.highlight-card,
+.dark-card {
+padding: 1rem;
+}
+
+.table-responsive {
+width: 100%;
+overflow-x: auto;
+}
+
+.nav-footer {
+text-align: center;
+}
+
+p,
+li,
+td,
+th {
+overflow-wrap: break-word;
+word-wrap: break-word;
+}
+}
+
+@media (max-width: 480px) {
+#quarto-content {
+padding-left: 0.75rem;
+padding-right: 0.75rem;
+}
+h1 {
+font-size: 1.75rem;
+}
+h2 {
+font-size: 1.45rem;
+}
+h3 {
+font-size: 1.2rem;
+}
+}
+
 
 a:focus-visible,
 button:focus-visible,
@@ -4454,7 +4564,8 @@ scroll-behavior: auto;
 transition: none !important;
 animation: none !important;
 }
-}</style>
+}
+</style>
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -4539,7 +4650,7 @@ animation: none !important;
 <ul>
 <li><a href="ICE.gov - News Release - 02.20.2026.pdf">ICE.gov News Release</a></li>
 <li><a href="PBS - News Article - 02.20.2026.pdf">PBS News Article</a></li>
-<li>[WOTC News Article] (WTOC - News Article - 02.17.2026.pdf)</li>
+<li><a href="WTOC - News Article - 02.17.2026.pdf">WOTC News Article</a></li>
 </ul>
 
 
