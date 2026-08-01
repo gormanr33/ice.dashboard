@@ -4267,7 +4267,8 @@ vertical-align: -.125em;
 
     const options = {
       valueNames: ['listing-title','listing-date','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
+      page: 18,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
     };
 
@@ -4802,65 +4803,6 @@ text-overflow: ellipsis;
 cursor: help;
 }
 
-.tooltip-cell::after {
-
-content: attr(data-tooltip);
-position: absolute;
-z-index: 10000;
-left: 0;
-bottom: calc(100% + 10px);
-width: 360px;
-max-width: 75vw;
-padding: 12px 14px;
-background-color: var(--midnight-violet);
-color: #ffffff;
-font-size: 0.85rem;
-font-weight: 400;
-line-height: 1.5;
-text-align: left;
-white-space: normal;
-overflow-wrap: break-word;
-border-radius: 7px;
-box-shadow:
-0 5px 18px rgba(44, 19, 32, 0.25);
-
-opacity: 0;
-visibility: hidden;
-pointer-events: none;
-transform: translateY(5px);
-transition:
-opacity 0.15s ease,
-transform 0.15s ease,
-visibility 0.15s ease;
-}
-
-.tooltip-cell::before {
-content: "";
-position: absolute;
-z-index: 10001;
-left: 18px;
-bottom: calc(100% + 4px);
-border-width: 6px;
-border-style: solid;
-border-color:
-var(--midnight-violet)
-transparent
-transparent
-transparent;
-opacity: 0;
-visibility: hidden;
-transition:
-opacity 0.15s ease,
-visibility 0.15s ease;
-}
-
-.tooltip-cell:hover::after,
-.tooltip-cell:hover::before {
-opacity: 1;
-visibility: visible;
-transform: translateY(0);
-}
-
 .source-link {
 display: inline-block;
 color: var(--dark-spruce) !important;
@@ -5069,7 +5011,7 @@ animation: none !important;
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1783987200000" data-listing-file-modified-sort="1785551059439" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="28">
+<div class="g-col-1" data-index="0" data-listing-date-sort="1783987200000" data-listing-file-modified-sort="1785553252713" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="28">
 <a href="./sources/2026.07.14 - Juan Jairo Coronilla Duran/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -5096,7 +5038,355 @@ Jul 14, 2026
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="1772323200000" data-listing-file-modified-sort="1785551059023" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="25">
+<div class="g-col-1" data-index="1" data-listing-date-sort="1782889200000" data-listing-file-modified-sort="1785553252571" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="80">
+<a href="./sources/2026.07.07 - Lorenzo Salgado Araujo/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Lorenzo Salgado Araujo
+</h5>
+<div class="card-text listing-description delink">
+
+
+<ul>
+<li>AP News Press Release</li>
+<li>DHS Twitter Statement</li>
+<li>Houston Public Media Press Release + family statement to press</li>
+<li>Houston Public Media Press Release + ICE statement to press</li>
+<li>NYT…</li></ul>
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Jul 1, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="2" data-listing-date-sort="1782259200000" data-listing-file-modified-sort="1785553252453" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="18">
+<a href="./sources/2026.06.04 - Mamuka Artmeladze/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Alejandro Cabrera Clemente
+</h5>
+<div class="card-text listing-description delink">
+
+
+<ul>
+<li>ICE.gov Detainee Death Report</li>
+<li>ICE.gov News Release</li>
+</ul>
+
+
+
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Jun 24, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="3" data-listing-date-sort="1782259200000" data-listing-file-modified-sort="1785553252455" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="11">
+<a href="./sources/2026.06.24 - Adrian Andreas Florian/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Adrian Andreas Florian
+</h5>
+<div class="card-text listing-description delink">
+
+
+<ul>
+<li>ICE.gov News Release</li>
+</ul>
+
+
+
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Jun 24, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="4" data-listing-date-sort="1781827200000" data-listing-file-modified-sort="1785553252454" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="10">
+<a href="./sources/2026.06.19 - Felix Alcorta-Rodriguez/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Felix Alcorta-Rodriguez
+</h5>
+<div class="card-text listing-description delink">
+
+
+<ul>
+<li>ICE.gov News Release</li>
+</ul>
+
+
+
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Jun 19, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="5" data-listing-date-sort="1777593600000" data-listing-file-modified-sort="1785553252451" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="35">
+<a href="./sources/2026.05.01 - Denny Adan Gonzalez/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Alejandro Cabrera Clemente
+</h5>
+<div class="card-text listing-description delink">
+
+
+<ul>
+<li>ICE.gov Detainee Death Report</li>
+<li>ICE.gov News Release</li>
+<li>Austin Kocher (Substack) Article</li>
+<li>WRDW News Article</li>
+</ul>
+
+
+
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+May 1, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="6" data-listing-date-sort="1776297600000" data-listing-file-modified-sort="1785553252380" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="27">
+<a href="./sources/2026.04.16 - Aled Damien Carbonell-Betancourt/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Aled Damien Carbonell-Betancourt
+</h5>
+<div class="card-text listing-description delink">
+
+
+<ul>
+<li>ICE.gov Detainee Death Report</li>
+<li>ICE.gov News Release</li>
+<li>NBC Miami News Article</li>
+</ul>
+
+
+
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Apr 16, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="7" data-listing-date-sort="1776038400000" data-listing-file-modified-sort="1785553252368" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="37">
+<a href="./sources/2026.04.13 - Alejandro Cabrera Clemente/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Alejandro Cabrera Clemente
+</h5>
+<div class="card-text listing-description delink">
+
+
+<ul>
+<li>ICE.gov Detainee Death Report</li>
+<li>ICE.gov News Release</li>
+<li>Austin Kocher (Substack) Article</li>
+<li>El Pais News Article</li>
+</ul>
+
+
+
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Apr 13, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="8" data-listing-date-sort="1775001600000" data-listing-file-modified-sort="1785553252350" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="27">
+<a href="./sources/2026.04.01 - Tuan Van Bui/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Tuan Van Bui
+</h5>
+<div class="card-text listing-description delink">
+
+
+<ul>
+<li>ICE.gov Detainee Death Report</li>
+<li>ICE.gov News Release</li>
+<li>ACLU Indiana Press Release</li>
+</ul>
+
+
+
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Apr 1, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="9" data-listing-date-sort="1774396800000" data-listing-file-modified-sort="1785553252348" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="25">
+<a href="./sources/2026.03.25- Jose Guadalupe Ramos-Solano/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Jose Guadalupe Ramos-Solano
+</h5>
+<div class="card-text listing-description delink">
+
+
+<ul>
+<li>ICE.gov Detainee Death Report</li>
+<li>ICE.gov News Release</li>
+<li>BBC News Article</li>
+</ul>
+
+
+
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Mar 25, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="10" data-listing-date-sort="1773619200000" data-listing-file-modified-sort="1785553252340" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="33">
+<a href="./sources/2026.03.16 - Royer Perez-Jimenez/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Royer Perez-Jimenez
+</h5>
+<div class="card-text listing-description delink">
+
+
+<ul>
+<li>ICE.gov Detainee Death Report</li>
+<li>ICE.gov News Release</li>
+<li>Miami Herald</li>
+<li>Truthout News Article</li>
+</ul>
+
+
+
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Mar 16, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="11" data-listing-date-sort="1773446400000" data-listing-file-modified-sort="1785553252334" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="29">
+<a href="./sources/2026.03.14 - Mohammad Nazeer Paktiawal/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Mohammad Nazeer Paktiawal
+</h5>
+<div class="card-text listing-description delink">
+
+
+<ul>
+<li>ICE.gov Detainee Death Report</li>
+<li>ICE.gov News Release</li>
+<li>Houston Public Media News Article</li>
+</ul>
+
+
+
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Mar 14, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="12" data-listing-date-sort="1772409600000" data-listing-file-modified-sort="1785553252302" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="37">
+<a href="./sources/2026.03.02 - Daphy Michel/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Daphy Michel
+</h5>
+<div class="card-text listing-description delink">
+
+
+<ul>
+<li>ABC Pittsburgh News Article</li>
+<li>AP News News Article</li>
+<li>DHS Tweet</li>
+<li>Haitian Times News Article</li>
+</ul>
+
+
+
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Mar 2, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="13" data-listing-date-sort="1772409600000" data-listing-file-modified-sort="1785553252306" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="27">
+<a href="./sources/2026.03.02 - Emanuel Cleeford Damas/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Emanuel Cleeford Damas
+</h5>
+<div class="card-text listing-description delink">
+
+
+<ul>
+<li>ICE.gov Detainee Death Report</li>
+<li>ICE.gov News Release</li>
+<li>KTAR News News Article</li>
+</ul>
+
+
+
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Mar 2, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="14" data-listing-date-sort="1772323200000" data-listing-file-modified-sort="1785553252279" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="25">
 <a href="./sources/2026.03.01 - Pejman Karshenas Najafabadi/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -5123,7 +5413,7 @@ Mar 1, 2026
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="2" data-listing-date-sort="1772150400000" data-listing-file-modified-sort="1785551059017" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="27">
+<div class="g-col-1" data-index="15" data-listing-date-sort="1772150400000" data-listing-file-modified-sort="1785553252272" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="27">
 <a href="./sources/2026.02.27- Alberto Gutierrez-Reyes/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -5150,7 +5440,7 @@ Feb 27, 2026
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="3" data-listing-date-sort="1771891200000" data-listing-file-modified-sort="1785551059008" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="43">
+<div class="g-col-1" data-index="16" data-listing-date-sort="1771891200000" data-listing-file-modified-sort="1785553252263" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="43">
 <a href="./sources/2026.02.24 - Nurul Amin Shah Alam/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -5178,7 +5468,7 @@ Feb 24, 2026
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="4" data-listing-date-sort="1771286400000" data-listing-file-modified-sort="1785551058994" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="25">
+<div class="g-col-1" data-index="17" data-listing-date-sort="1771286400000" data-listing-file-modified-sort="1785553252250" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="25">
 <a href="./sources/2026.02.17 - Linda Davis/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -5205,7 +5495,7 @@ Feb 17, 2026
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="5" data-listing-date-sort="1771200000000" data-listing-file-modified-sort="1785551058950" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="27">
+<div class="g-col-1" data-index="18" data-listing-date-sort="1771200000000" data-listing-file-modified-sort="1785553252204" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="27">
 <a href="./sources/2026.02.16 - Jairo Garcia-Hernandez/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -5232,7 +5522,7 @@ Feb 16, 2026
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="6" data-listing-date-sort="1771200000000" data-listing-file-modified-sort="1785551058952" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="29">
+<div class="g-col-1" data-index="19" data-listing-date-sort="1771200000000" data-listing-file-modified-sort="1785553252207" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="29">
 <a href="./sources/2026.02.16 - Lorth Sim/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -5259,7 +5549,7 @@ Feb 16, 2026
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="7" data-listing-date-sort="1769990400000" data-listing-file-modified-sort="1785551058948" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="47">
+<div class="g-col-1" data-index="20" data-listing-date-sort="1769990400000" data-listing-file-modified-sort="1785553252202" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="47">
 <a href="./sources/2026.02.02 - 4 Unnamed Haitian Women/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -5287,7 +5577,7 @@ Feb 2, 2026
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="8" data-listing-date-sort="1769212800000" data-listing-file-modified-sort="1785551058876" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="27">
+<div class="g-col-1" data-index="21" data-listing-date-sort="1769212800000" data-listing-file-modified-sort="1785553252129" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="27">
 <a href="./sources/2026.01.24 - Alex Pretti/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -5314,7 +5604,7 @@ Jan 24, 2026
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="9" data-listing-date-sort="1768348800000" data-listing-file-modified-sort="1785551058815" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="25">
+<div class="g-col-1" data-index="22" data-listing-date-sort="1768348800000" data-listing-file-modified-sort="1785553252066" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="25">
 <a href="./sources/2026.01.14 - Heber Sánchez Domínguez/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -5341,7 +5631,7 @@ Jan 14, 2026
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="10" data-listing-date-sort="1768348800000" data-listing-file-modified-sort="1785551058854" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="27">
+<div class="g-col-1" data-index="23" data-listing-date-sort="1768348800000" data-listing-file-modified-sort="1785553252107" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="27">
 <a href="./sources/2026.01.14 - Víctor Manuel Díaz/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -5368,7 +5658,7 @@ Jan 14, 2026
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="11" data-listing-date-sort="1767916800000" data-listing-file-modified-sort="1785551058811" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="27">
+<div class="g-col-1" data-index="24" data-listing-date-sort="1767916800000" data-listing-file-modified-sort="1785553252062" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="27">
 <a href="./sources/2026.01.09 - Parady La/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -5395,7 +5685,7 @@ Jan 9, 2026
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="12" data-listing-date-sort="1767744000000" data-listing-file-modified-sort="1785551058807" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="23">
+<div class="g-col-1" data-index="25" data-listing-date-sort="1767744000000" data-listing-file-modified-sort="1785553252058" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="23">
 <a href="./sources/2026.01.07 - Renee Nicole Good/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -5422,7 +5712,7 @@ Jan 7, 2026
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="13" data-listing-date-sort="1767657600000" data-listing-file-modified-sort="1785551058796" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="27">
+<div class="g-col-1" data-index="26" data-listing-date-sort="1767657600000" data-listing-file-modified-sort="1785553252047" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="27">
 <a href="./sources/2026.01.06 - Luis Beltrán Yáñez–Cruz/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -5449,7 +5739,7 @@ Jan 6, 2026
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="14" data-listing-date-sort="1767571200000" data-listing-file-modified-sort="1785551058752" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="27">
+<div class="g-col-1" data-index="27" data-listing-date-sort="1767571200000" data-listing-file-modified-sort="1785553252000" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="27">
 <a href="./sources/2026.01.05 - Luis Gustavo Núñez Cáceres/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -5476,7 +5766,7 @@ Jan 5, 2026
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="15" data-listing-date-sort="1767398400000" data-listing-file-modified-sort="1785551058719" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="41">
+<div class="g-col-1" data-index="28" data-listing-date-sort="1767398400000" data-listing-file-modified-sort="1785553251964" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="41">
 <a href="./sources/2026.01.03 - Geraldo Lunas Campos/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -5507,6 +5797,9 @@ Jan 3, 2026
 </div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
+<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
 </div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {

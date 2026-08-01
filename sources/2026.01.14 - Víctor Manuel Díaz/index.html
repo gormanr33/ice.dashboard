@@ -4378,65 +4378,6 @@ text-overflow: ellipsis;
 cursor: help;
 }
 
-.tooltip-cell::after {
-
-content: attr(data-tooltip);
-position: absolute;
-z-index: 10000;
-left: 0;
-bottom: calc(100% + 10px);
-width: 360px;
-max-width: 75vw;
-padding: 12px 14px;
-background-color: var(--midnight-violet);
-color: #ffffff;
-font-size: 0.85rem;
-font-weight: 400;
-line-height: 1.5;
-text-align: left;
-white-space: normal;
-overflow-wrap: break-word;
-border-radius: 7px;
-box-shadow:
-0 5px 18px rgba(44, 19, 32, 0.25);
-
-opacity: 0;
-visibility: hidden;
-pointer-events: none;
-transform: translateY(5px);
-transition:
-opacity 0.15s ease,
-transform 0.15s ease,
-visibility 0.15s ease;
-}
-
-.tooltip-cell::before {
-content: "";
-position: absolute;
-z-index: 10001;
-left: 18px;
-bottom: calc(100% + 4px);
-border-width: 6px;
-border-style: solid;
-border-color:
-var(--midnight-violet)
-transparent
-transparent
-transparent;
-opacity: 0;
-visibility: hidden;
-transition:
-opacity 0.15s ease,
-visibility 0.15s ease;
-}
-
-.tooltip-cell:hover::after,
-.tooltip-cell:hover::before {
-opacity: 1;
-visibility: visible;
-transform: translateY(0);
-}
-
 .source-link {
 display: inline-block;
 color: var(--dark-spruce) !important;
@@ -4649,7 +4590,7 @@ animation: none !important;
 <h2 class="anchored" data-anchor-id="source-documents">Source Documents</h2>
 <ul>
 <li><a href="ICE.gov - Detainee Death Report.pdf">ICE.gov Detainee Death Report</a></li>
-<li><a href="ICE.gov - News Article - 01.10.2026.pdf">ICE.gov News Article</a></li>
+<li><a href="ICE.gov - News Article - 01.18.2026.pdf">ICE.gov News Article</a></li>
 <li><a href="Associated Press - News Release - 01.28.2026.pdf">Associated Press News Release</a></li>
 </ul>
 
