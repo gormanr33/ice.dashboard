@@ -21,6 +21,8 @@ website:
         text: Individual Data Cards
       - href: faq.qmd
         text: FAQ
+      - href: test.qmd
+        text: TEST
   
   page-footer:
     left: "Copyright 2026, Rachel Gorman"

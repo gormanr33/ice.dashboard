@@ -235,26 +235,17 @@ cards <- lapply(
       "%B %d, %Y"
     )
 
-
     tags$div(
-
       class = "card shadow-sm mb-4 source-card",
 
-      `data-year` =
-        ICECBPdata$Year[i],
+      # Filter data
+      `data-year` = ICECBPdata$Year[i],
+      `data-state` = ICECBPdata$state_id[i],
+      `data-cause` = ICECBPdata$cause_id[i],
+      `data-custody` = ICECBPdata$custody_id[i],
 
-      `data-state` =
-        ICECBPdata$state_id[i],
-
-      `data-cause` =
-        ICECBPdata$cause_id[i],
-
-      `data-custody` =
-        ICECBPdata$custody_id[i],
-
-
+      # Card header
       tags$div(
-
         class = "card-header",
 
         tags$h4(
@@ -268,81 +259,103 @@ cards <- lapply(
         )
       ),
 
-
+      # Card body
       tags$div(
-
         class = "card-body",
 
+        # Two-column summary
 
-        tags$p(
+tags$div(
+  class = "row mb-3",
 
-          tags$strong("Age:"),
-          ICECBPdata$Age[i],
+  # LEFT COLUMN
+  tags$div(
+    class = "col-md-6",
 
-          tags$br(),
+    tags$p(
+      class = "mb-2",
 
-          tags$strong("Gender:"),
-          ICECBPdata$Gender[i]
-        ),
+      tags$strong("Age: "),
+
+      ICECBPdata$Age[i]
+    ),
+
+    tags$p(
+      class = "mb-2",
+
+      tags$strong("Gender: "),
+
+      ICECBPdata$Gender[i]
+    ),
+
+    tags$p(
+      class = "mb-0",
+
+      tags$strong("Location:"),
+      tags$br(),
+
+      ICECBPdata$Country[i],
+      ", ",
+      ICECBPdata$State[i],
+      ", ",
+      ICECBPdata$City[i]
+    )
+  ),
 
 
-        tags$p(
+  # RIGHT COLUMN
+  tags$div(
+    class = "col-md-6",
 
-          tags$strong("Location:"),
-          tags$br(),
+    tags$p(
+      class = "mb-3",
 
-          ICECBPdata$Country[i],
-          ", ",
-          ICECBPdata$State[i],
-          ", ",
-          ICECBPdata$City[i]
-        ),
+      tags$span(
+        class = "badge bg-secondary",
 
+        "In DHS Custody?: ",
 
-        tags$p(
+        ICECBPdata$Custody[i]
+      )
+    ),
 
-          tags$span(
-            class = "badge bg-secondary",
+    tags$p(
+      class = "mb-0",
 
-            "In DHS Custody?: ",
-            ICECBPdata$Custody[i]
-          ),
+      tags$span(
+        class = "badge bg-primary",
 
-          " ",
+        "Cause of Death: ",
 
-          tags$span(
-            class = "badge bg-primary",
+        ICECBPdata$`Cause of Death (Official)`[i]
+      )
+    )
+  )
+),
 
-            "Cause of Death: ",
-            ICECBPdata$`Cause of Death (Official)`[i]
+        # View Full Record button
+        tags$div(
+          class = "mt-3",
+
+          tags$button(
+            class = "btn btn-outline-primary btn-sm",
+            type = "button",
+
+            `data-bs-toggle` = "collapse",
+
+            `data-bs-target` =
+              paste0("#record", i),
+
+            "View Full Record"
           )
         ),
 
-
-        tags$button(
-
-          class = "btn btn-outline-primary btn-sm",
-
-          type = "button",
-
-          `data-bs-toggle` = "collapse",
-
-          `data-bs-target` =
-            paste0("#record", i),
-
-          "View Full Record"
-        ),
-
-
+        # Full record
         tags$div(
-
           class = "collapse mt-4",
-
           id = paste0("record", i),
 
-
           tags$hr(),
-
 
           tags$h5(
             "Location of Death"
@@ -358,7 +371,6 @@ cards <- lapply(
             ICECBPdata$County[i]
           ),
 
-
           tags$h5(
             "Coordinates"
           ),
@@ -372,7 +384,6 @@ cards <- lapply(
             "Longitude: ",
             ICECBPdata$Longitude[i]
           ),
-
 
           tags$h5(
             "Cause of Death"
@@ -390,7 +401,6 @@ cards <- lapply(
             ICECBPdata$`Cause of Death (Unofficial)`[i]
           ),
 
-
           tags$h5(
             "Facilities & Transfers"
           ),
@@ -398,7 +408,6 @@ cards <- lapply(
           tags$p(
             ICECBPdata$`Facilities & Transfers`[i]
           ),
-
 
           tags$h5(
             "Other Notes"
@@ -408,15 +417,12 @@ cards <- lapply(
             ICECBPdata$`Other Notes`[i]
           ),
 
-
           tags$h5(
             "Sources"
           ),
 
           tags$p(
-
             tags$a(
-
               href =
                 ICECBPdata$`Drive Link to Sources`[i],
 
@@ -430,6 +436,7 @@ cards <- lapply(
     )
   }
 )
+
 
 # Output
 
@@ -445,7 +452,7 @@ tagList(
 ```
 
 ## Add Javascript
-```{html}
+```{=html}
 <script>
 
 document.addEventListener("DOMContentLoaded", function () {
