@@ -9,140 +9,556 @@ format:
 ---
 ```{r}
 #| include: false
+
 library(tidyverse)
 library(glue)
 library(htmltools)
+library(lubridate)
 
-ICECBPdata <- read_csv("data/ICECBPdata.csv")
+ICECBPdata <- read_csv("data/ICECBPdata.csv") %>%
+  mutate(
+    Date = parse_date_time(
+      Date,
+      orders = c("mdy", "dmy", "ymd")
+    ),
+    Year = year(Date)
+  )
 ```
+
 
 ```{r}
 #| echo: false
-#| results: asis
 
-library(glue)
-
-cards <- ""
-
-for (i in 1:nrow(ICECBPdata)) {
-
-  cards <- paste0(
-    cards,
-
-    glue("
-<div class='card shadow-sm mb-4'>
-
-<div class='card-header'>
-<h4 class='mb-1'>{ICECBPdata$Name[i]}</h4>
-<small class='text-muted'>{ICECBPdata$Date[i]}</small>
-</div>
-
-<div class='card-body'>
-
-<p>
-<strong>Age:</strong> {ICECBPdata$Age[i]}<br>
-<strong>Gender:</strong> {ICECBPdata$Gender[i]}
-</p>
-
-<p>
-<strong>Location:</strong><br>
-{ICECBPdata$Country[i]}, 
-{ICECBPdata$State[i]}, 
-{ICECBPdata$City[i]}
-</p>
-
-<p>
-
-<span class='badge bg-secondary'>
-In DHS Custody?: {ICECBPdata$Custody[i]}
-</span>
-
-<span class='badge bg-primary'>
-Cause of Death: {ICECBPdata$`Cause of Death (Official)`[i]}
-</span>
-
-</p>
-
-
-<button 
-class='btn btn-outline-primary btn-sm'
-type='button'
-data-bs-toggle='collapse'
-data-bs-target='#record{i}'>
-
-View Full Record
-
-</button>
-
-
-<div class='collapse mt-4' id='record{i}'>
-
-<hr>
-
-<h5>Location of Death</h5>
-
-<p>
-{ICECBPdata$Country[i]},
-{ICECBPdata$State[i]},
-{ICECBPdata$City[i]},
-{ICECBPdata$County[i]}
-</p>
-
-
-<h5>Coordinates</h5>
-
-<p>
-Latitude: {ICECBPdata$Latitude[i]}<br>
-Longitude: {ICECBPdata$Longitude[i]}
-</p>
-
-
-<h5>Cause of Death</h5>
-
-<p>
-<strong>Official:</strong><br>
-{ICECBPdata$`Cause of Death (Official)`[i]}
-</p>
-
-<p>
-<strong>Unofficial:</strong><br>
-{ICECBPdata$`Cause of Death (Unofficial)`[i]}
-</p>
-
-
-<h5>Facilities & Transfers</h5>
-
-<p>
-{ICECBPdata$`Facilities & Transfers`[i]}
-</p>
-
-
-<h5>Other Notes</h5>
-
-<p>
-{ICECBPdata$`Other Notes`[i]}
-</p>
-
-
-<h5>Sources</h5>
-
-<p>
-<a href='{ICECBPdata$`Drive Link to Sources`[i]}' target='_blank'>
-View Source Documents
-</a>
-</p>
-
-
-</div>
-
-</div>
-
-</div>
-")
+# Create IDs for filtering
+ICECBPdata <- ICECBPdata %>%
+  mutate(
+    state_id = as.integer(factor(State)),
+    cause_id = as.integer(
+      factor(`Cause of Death (Official)`)
+    ),
+    custody_id = as.integer(
+      factor(Custody)
+    )
   )
 
-}
+#filter options
 
-knitr::asis_output(cards)
+year_options <- sort(
+  unique(ICECBPdata$Year),
+  decreasing = TRUE
+)
 
+state_options <- ICECBPdata %>%
+  distinct(state_id, State) %>%
+  filter(!is.na(State)) %>%
+  arrange(State)
+
+cause_options <- ICECBPdata %>%
+  distinct(
+    cause_id,
+    `Cause of Death (Official)`
+  ) %>%
+  filter(
+    !is.na(`Cause of Death (Official)`)
+  ) %>%
+  arrange(`Cause of Death (Official)`)
+
+custody_options <- ICECBPdata %>%
+  distinct(custody_id, Custody) %>%
+  filter(!is.na(Custody)) %>%
+  arrange(Custody)
+
+#filter controls
+filter_panel <- tags$div(
+
+  class = "d-flex align-items-end gap-2 mb-4 flex-wrap",
+
+  # Year
+  tags$div(
+    style = "flex: 0 0 120px;",
+
+    tags$label(
+      `for` = "yearFilter",
+      class = "form-label mb-1 small",
+      tags$strong("Year")
+    ),
+
+    tags$select(
+      id = "yearFilter",
+      class = "form-select form-select-sm",
+
+      tags$option(
+        value = "all",
+        "All Years"
+      ),
+
+      lapply(
+        year_options,
+        function(x) {
+          tags$option(
+            value = x,
+            x
+          )
+        }
+      )
+    )
+  ),
+
+
+  #state
+  tags$div(
+    style = "flex: 0 0 160px;",
+
+    tags$label(
+      `for` = "stateFilter",
+      class = "form-label mb-1 small",
+      tags$strong("State")
+    ),
+
+    tags$select(
+      id = "stateFilter",
+      class = "form-select form-select-sm",
+
+      tags$option(
+        value = "all",
+        "All States"
+      ),
+
+      lapply(
+        seq_len(nrow(state_options)),
+        function(x) {
+
+          tags$option(
+            value = state_options$state_id[x],
+            state_options$State[x]
+          )
+
+        }
+      )
+    )
+  ),
+
+
+  #cause of death
+  tags$div(
+    style = "flex: 0 0 220px;",
+
+    tags$label(
+      `for` = "causeFilter",
+      class = "form-label mb-1 small",
+      tags$strong("Cause of Death")
+    ),
+
+    tags$select(
+      id = "causeFilter",
+      class = "form-select form-select-sm",
+
+      tags$option(
+        value = "all",
+        "All Causes"
+      ),
+
+      lapply(
+        seq_len(nrow(cause_options)),
+        function(x) {
+
+          tags$option(
+            value = cause_options$cause_id[x],
+            cause_options$`Cause of Death (Official)`[x]
+          )
+
+        }
+      )
+    )
+  ),
+
+
+  #custody
+  tags$div(
+    style = "flex: 0 0 150px;",
+
+    tags$label(
+      `for` = "custodyFilter",
+      class = "form-label mb-1 small",
+      tags$strong("DHS Custody")
+    ),
+
+    tags$select(
+      id = "custodyFilter",
+      class = "form-select form-select-sm",
+
+      tags$option(
+        value = "all",
+        "All"
+      ),
+
+      lapply(
+        seq_len(nrow(custody_options)),
+        function(x) {
+
+          tags$option(
+            value = custody_options$custody_id[x],
+            custody_options$Custody[x]
+          )
+
+        }
+      )
+    )
+  ),
+
+
+  #clear button
+  tags$button(
+    id = "clearFilters",
+    class = "btn btn-outline-secondary btn-sm",
+    type = "button",
+    style = "height: 31px;",
+    "Clear Filters"
+  ),
+
+  # Result count
+  tags$span(
+    id = "resultCount",
+    class = "text-muted small ms-2",
+    style = "padding-bottom: 6px;"
+  )
+)
+
+# Cards
+
+cards <- lapply(
+  seq_len(nrow(ICECBPdata)),
+  function(i) {
+
+    display_date <- format(
+      ICECBPdata$Date[i],
+      "%B %d, %Y"
+    )
+
+
+    tags$div(
+
+      class = "card shadow-sm mb-4 source-card",
+
+      `data-year` =
+        ICECBPdata$Year[i],
+
+      `data-state` =
+        ICECBPdata$state_id[i],
+
+      `data-cause` =
+        ICECBPdata$cause_id[i],
+
+      `data-custody` =
+        ICECBPdata$custody_id[i],
+
+
+      tags$div(
+
+        class = "card-header",
+
+        tags$h4(
+          class = "mb-1",
+          ICECBPdata$Name[i]
+        ),
+
+        tags$small(
+          class = "text-muted",
+          display_date
+        )
+      ),
+
+
+      tags$div(
+
+        class = "card-body",
+
+
+        tags$p(
+
+          tags$strong("Age:"),
+          ICECBPdata$Age[i],
+
+          tags$br(),
+
+          tags$strong("Gender:"),
+          ICECBPdata$Gender[i]
+        ),
+
+
+        tags$p(
+
+          tags$strong("Location:"),
+          tags$br(),
+
+          ICECBPdata$Country[i],
+          ", ",
+          ICECBPdata$State[i],
+          ", ",
+          ICECBPdata$City[i]
+        ),
+
+
+        tags$p(
+
+          tags$span(
+            class = "badge bg-secondary",
+
+            "In DHS Custody?: ",
+            ICECBPdata$Custody[i]
+          ),
+
+          " ",
+
+          tags$span(
+            class = "badge bg-primary",
+
+            "Cause of Death: ",
+            ICECBPdata$`Cause of Death (Official)`[i]
+          )
+        ),
+
+
+        tags$button(
+
+          class = "btn btn-outline-primary btn-sm",
+
+          type = "button",
+
+          `data-bs-toggle` = "collapse",
+
+          `data-bs-target` =
+            paste0("#record", i),
+
+          "View Full Record"
+        ),
+
+
+        tags$div(
+
+          class = "collapse mt-4",
+
+          id = paste0("record", i),
+
+
+          tags$hr(),
+
+
+          tags$h5(
+            "Location of Death"
+          ),
+
+          tags$p(
+            ICECBPdata$Country[i],
+            ", ",
+            ICECBPdata$State[i],
+            ", ",
+            ICECBPdata$City[i],
+            ", ",
+            ICECBPdata$County[i]
+          ),
+
+
+          tags$h5(
+            "Coordinates"
+          ),
+
+          tags$p(
+            "Latitude: ",
+            ICECBPdata$Latitude[i],
+
+            tags$br(),
+
+            "Longitude: ",
+            ICECBPdata$Longitude[i]
+          ),
+
+
+          tags$h5(
+            "Cause of Death"
+          ),
+
+          tags$p(
+            tags$strong("Official:"),
+            tags$br(),
+            ICECBPdata$`Cause of Death (Official)`[i]
+          ),
+
+          tags$p(
+            tags$strong("Unofficial:"),
+            tags$br(),
+            ICECBPdata$`Cause of Death (Unofficial)`[i]
+          ),
+
+
+          tags$h5(
+            "Facilities & Transfers"
+          ),
+
+          tags$p(
+            ICECBPdata$`Facilities & Transfers`[i]
+          ),
+
+
+          tags$h5(
+            "Other Notes"
+          ),
+
+          tags$p(
+            ICECBPdata$`Other Notes`[i]
+          ),
+
+
+          tags$h5(
+            "Sources"
+          ),
+
+          tags$p(
+
+            tags$a(
+
+              href =
+                ICECBPdata$`Drive Link to Sources`[i],
+
+              target = "_blank",
+
+              "View Source Documents"
+            )
+          )
+        )
+      )
+    )
+  }
+)
+
+# Output
+
+tagList(
+
+  filter_panel,
+
+  tags$div(
+    id = "cardsContainer",
+    cards
+  )
+)
+```
+
+## Add Javascript
+```{html}
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const cards =
+    document.querySelectorAll(".source-card");
+
+  const year =
+    document.getElementById("yearFilter");
+
+  const state =
+    document.getElementById("stateFilter");
+
+  const cause =
+    document.getElementById("causeFilter");
+
+  const custody =
+    document.getElementById("custodyFilter");
+
+  const clear =
+    document.getElementById("clearFilters");
+
+  const count =
+    document.getElementById("resultCount");
+
+
+  function filterCards() {
+
+    let visible = 0;
+
+
+    cards.forEach(function(card) {
+
+      const yearMatch =
+        year.value === "all" ||
+        card.dataset.year === year.value;
+
+
+      const stateMatch =
+        state.value === "all" ||
+        card.dataset.state === state.value;
+
+
+      const causeMatch =
+        cause.value === "all" ||
+        card.dataset.cause === cause.value;
+
+
+      const custodyMatch =
+        custody.value === "all" ||
+        card.dataset.custody === custody.value;
+
+
+      const show =
+        yearMatch &&
+        stateMatch &&
+        causeMatch &&
+        custodyMatch;
+
+
+      card.hidden = !show;
+
+
+      if (show) {
+        visible++;
+      }
+
+    });
+
+
+    count.textContent =
+      `Showing ${visible} of ${cards.length} records`;
+  }
+
+
+  year.addEventListener(
+    "change",
+    filterCards
+  );
+
+  state.addEventListener(
+    "change",
+    filterCards
+  );
+
+  cause.addEventListener(
+    "change",
+    filterCards
+  );
+
+  custody.addEventListener(
+    "change",
+    filterCards
+  );
+
+
+  clear.addEventListener(
+    "click",
+    function() {
+
+      year.value = "all";
+      state.value = "all";
+      cause.value = "all";
+      custody.value = "all";
+
+      filterCards();
+    }
+  );
+
+
+  filterCards();
+
+});
+
+</script>
 ```

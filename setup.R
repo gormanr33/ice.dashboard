@@ -9,7 +9,8 @@ packages <- c(
   "DT",
   "glue",
   "htmltools",
-  "dplyr"
+  "dplyr",
+  "lubridate"
   
 )
 
